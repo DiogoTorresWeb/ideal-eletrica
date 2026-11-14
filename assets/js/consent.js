@@ -91,7 +91,7 @@
     el.innerHTML =
       '<div class="cmp__copy">' +
         '<p class="cmp__t" id="cmp-title">Cookies e medição</p>' +
-        '<p class="cmp__d" id="cmp-desc">Usamos armazenamento necessário para o site funcionar. Analítica e marketing só ligam se você aceitar. Você pode recusar ou escolher por categoria, e mudar depois no rodapé.</p>' +
+        '<p class="cmp__d" id="cmp-desc"><span class="cmp__s">Só medimos o uso do site se você aceitar.</span><span class="cmp__long">Usamos armazenamento necessário para o site funcionar. Analítica e marketing só ligam se você aceitar. Você pode recusar ou escolher por categoria, e mudar depois no rodapé.</span></p>' +
       "</div>" +
       '<div class="cmp__set" hidden>' +
         "<label><input type=\"checkbox\" checked disabled> Necessários <span>sempre ativos, para o site e para lembrar desta escolha</span></label>" +

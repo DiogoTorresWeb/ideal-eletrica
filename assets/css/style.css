@@ -13,6 +13,25 @@
    Os blocos de cada opção estão no fim deste arquivo (seção 4).
    ============================================================ */
 
+/* Títulos: Bricolage Grotesque 600 (decidido 12/11/2026), self-hosted, SIL OFL, baixada do Google Fonts em 12/11/2026. */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/bricolage-grotesque-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/bricolage-grotesque-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Archivo Variable (Google Fonts, SIL OFL), mesmos arquivos que a Konk usa.
    Um eixo de peso (100–900) e de largura (62–125%) serve título e corpo. */
 @font-face {
@@ -131,7 +150,7 @@
   --color-danger: #ff8a73;
 
   /* ---- Tipografia ---- */
-  --font-display: "Archivo", "Arial Narrow", sans-serif;
+  --font-display: "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
   --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
 
 /* Pares da votação. F1 = o padrão (Archivo), já definido acima. */
@@ -168,6 +187,17 @@ html[data-fonte="F3"] :is(h1, h2, h3, .hero-title, .brand, .intro-word-inner) {
   --fs-xl: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
   --fs-2xl: clamp(2.1rem, 1.8rem + 1.5vw, 3rem);
   --fs-3xl: clamp(2.5rem, 2rem + 2.2vw, 4rem);
+
+  /* Escala de títulos do design system (design-system-claude/tokens/typography.css) */
+  --fs-display: clamp(3.25rem, 1rem + 9vw, 8.5rem);
+  --fs-h1: clamp(2.75rem, 1.2rem + 6.2vw, 6rem);
+  --fs-h2: clamp(2rem, 1.2rem + 3vw, 3.5rem);
+  --fs-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem);
+  --fs-h4: clamp(1.25rem, 1.15rem + 0.4vw, 1.375rem);
+  --lh-h1: 0.98;
+  --lh-h2: 1.04;
+  --lh-h3: 1.12;
+  --lh-h4: 1.25;
 
   --lh-tight: 1.1;
   --lh-snug: 1.3;
@@ -210,7 +240,7 @@ html[data-fonte="F3"] :is(h1, h2, h3, .hero-title, .brand, .intro-word-inner) {
   --t-slow: 420ms var(--ease-out);
 
   /* ---- Layout ---- */
-  --container-max: 1180px;
+  --container-max: 1200px;
   --container-pad: var(--space-5);
   --header-h: 76px;
 
@@ -293,8 +323,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-variation-settings: "wdth" 112;
+  font-weight: 600;
   line-height: var(--lh-tight);
   letter-spacing: -0.025em;
   text-wrap: balance;
@@ -310,16 +339,22 @@ p {
 }
 
 h1 {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: -0.03em;
 }
 h2 {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
 }
 h3 {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: -0.02em;
 }
 h4 {
-  font-size: var(--fs-md);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
 }
 
 button,
@@ -691,7 +726,7 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
   gap: var(--space-3);
   grid-column: 2;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 600;
   font-size: var(--fs-md);
   letter-spacing: var(--ls-tight);
 }
@@ -710,8 +745,21 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
   justify-content: flex-end;
 }
 
+/* WhatsApp sempre visível no cabeçalho, também no celular (rótulo curto até 639 px). */
 .nav-cta {
+  display: inline-flex;
+  min-height: 44px;
+}
+.nav-cta__full {
   display: none;
+}
+@media (min-width: 640px) {
+  .nav-cta__full {
+    display: inline;
+  }
+  .nav-cta__short {
+    display: none;
+  }
 }
 
 .nav-toggle {
@@ -796,7 +844,7 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
 
 .mobile-menu-links a {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--fs-2xl);
   border-bottom: 1px solid rgba(244, 241, 234, 0.12);
   padding-block: var(--space-3);
@@ -883,12 +931,12 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
 }
 
 .hero-content {
-  max-width: 620px;
+  max-width: 960px;
   color: var(--color-white);
 }
 
 .hero-title {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-h1);
   color: var(--color-white);
 }
 
@@ -1049,7 +1097,7 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
 
 .cta-band h2 {
   color: var(--color-white);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-h3);
   max-width: 520px;
 }
 
@@ -1104,7 +1152,7 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
   gap: var(--space-4);
   padding-block: var(--space-5);
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--fs-md);
   cursor: pointer;
   list-style: none;
@@ -1314,10 +1362,25 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-lg);
-  transition: transform var(--t-fast);
+  /* Só aparece depois do hero (main.js põe .is-in); no topo o botão do cabeçalho já cumpre o papel. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--t-base), transform var(--t-base), visibility 0s linear var(--t-base);
+}
+.wa-float.is-in {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-float {
+    transition: none;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
-  .wa-float:hover {
+  .wa-float.is-in:hover {
     transform: translateY(-2px) scale(1.04);
   }
 }
@@ -1421,8 +1484,7 @@ html[data-logo="L4"] .lg-L4 {
 .trabalho-num {
   display: block;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-variation-settings: "wdth" 112;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   color: var(--color-accent);
   font-size: var(--fs-sm);
@@ -1430,7 +1492,7 @@ html[data-logo="L4"] .lg-L4 {
   margin-bottom: var(--space-2);
 }
 .trabalho-item h3 {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-h4);
   margin-bottom: var(--space-2);
 }
 .trabalho-item p {
@@ -1487,7 +1549,7 @@ html[data-logo="L4"] .lg-L4 {
 }
 .area-name {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--fs-md);
 }
 @media (max-width: 599px) {
@@ -1837,31 +1899,102 @@ html[data-paleta="P4"] ::selection {
   color: var(--color-text);
 }
 
+/* Texto curto no celular, completo a partir de 640 px. */
+.cmp__s {
+  display: none;
+}
+
+/* Celular: faixa fina embaixo, para não tapar o título nem o botão de WhatsApp.
+   Recusar e Aceitar lado a lado, com o mesmo peso; Ajustes e Política na linha de baixo. */
 @media (max-width: 639px) {
   .cmp {
-    left: var(--space-3);
-    right: var(--space-3);
-    bottom: var(--space-3);
-    padding: var(--space-4);
+    left: var(--space-2);
+    right: var(--space-2);
+    bottom: max(var(--space-2), env(safe-area-inset-bottom));
+    padding: var(--space-3) var(--space-4);
     border-radius: 14px;
     max-height: calc(100dvh - 1.25rem);
     overflow: auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-3);
+    row-gap: 0;
   }
-  .cmp:has(.cmp__set:not([hidden])) .cmp__d {
+  .cmp__s {
+    display: inline;
+  }
+  .cmp__long,
+  .cmp__t {
     display: none;
   }
-  .cmp__b {
-    flex-direction: column;
-    align-items: stretch;
+  .cmp:has(.cmp__set:not([hidden])) .cmp__long {
+    display: inline;
   }
-  .cmp__b .btn-outline {
+  .cmp:has(.cmp__set:not([hidden])) .cmp__s {
+    display: none;
+  }
+  .cmp__copy {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .cmp__d {
+    font-size: var(--fs-sm);
+    line-height: 1.4;
+  }
+  .cmp__set {
+    grid-row: 2;
+    margin-top: var(--space-3);
+  }
+  .cmp__b {
+    display: contents;
+  }
+  .cmp__b .btn {
+    grid-row: 3;
     width: 100%;
     justify-content: center;
+    min-height: 44px;
+    margin-top: var(--space-3);
   }
-  .cmp__b .btn-ghost {
+  .cmp__b .btn[data-cmp="no"] {
+    grid-column: 1;
+  }
+  .cmp__b .btn[data-cmp="yes"] {
+    grid-column: 2;
+  }
+  .cmp__b .btn[data-cmp="set"] {
+    grid-row: 4;
+    grid-column: 1;
     width: auto;
+    justify-self: start;
+    min-height: 36px;
+    margin-top: var(--space-1);
+    padding-inline: 0;
+    font-size: var(--fs-xs);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+  .cmp__l {
+    grid-row: 4;
+    grid-column: 2;
+    justify-self: end;
     align-self: center;
-    justify-content: center;
+    margin-top: var(--space-1);
+  }
+  /* Com os Ajustes abertos, «Salvar escolhas» volta a ser botão de largura total. */
+  .cmp:has(.cmp__set:not([hidden])) .cmp__b .btn[data-cmp="set"] {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    width: 100%;
+    justify-self: stretch;
+    min-height: 44px;
+    padding-inline: var(--space-5);
+    text-decoration: none;
+    font-size: inherit;
+    margin-top: var(--space-3);
+  }
+  .cmp:has(.cmp__set:not([hidden])) .cmp__l {
+    grid-row: 6;
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 }
 
@@ -1999,4 +2132,29 @@ html.has-cmp .wa-float {
     padding-right: calc(56px + var(--space-5) + var(--space-4));
     box-sizing: border-box;
   }
+}
+
+/* ---- FAQ curto da home (reusa .faq-item) ---- */
+.faq-home__list {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.faq-ask {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+.faq-ask:hover {
+  text-decoration-thickness: 2px;
+}
+.faq-ask:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }

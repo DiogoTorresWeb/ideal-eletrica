@@ -34,6 +34,10 @@
           return;
         }
         el.setAttribute("href", cfg.whatsappLink);
+        /* Mensagem pronta própria de cada botão (data-wa-msg): o Diego vê de onde veio a conversa. */
+        var msg = el.getAttribute("data-wa-msg");
+        var num = (cfg.whatsapp || "").replace(/\D/g, "");
+        if (msg && num) el.setAttribute("href", "https://wa.me/" + num + "?text=" + encodeURIComponent(msg));
         el.setAttribute("target", "_blank");
         el.setAttribute("rel", "noopener");
         return;
@@ -99,6 +103,25 @@
       { threshold: 0 }
     );
     observer.observe(sentinel);
+  }
+
+  /* WhatsApp flutuante: aparece só depois de rolar ~90% da primeira tela
+     (IntersectionObserver num marcador, sem scroll listener). */
+  function setupFloatingWhatsApp() {
+    var fab = document.querySelector(".wa-float");
+    if (!fab) return;
+    if (!("IntersectionObserver" in window)) {
+      fab.classList.add("is-in");
+      return;
+    }
+    var mark = document.createElement("div");
+    mark.setAttribute("aria-hidden", "true");
+    mark.style.cssText = "position:absolute;top:90vh;left:0;width:1px;height:1px;pointer-events:none";
+    document.body.appendChild(mark);
+    new IntersectionObserver(function (entries) {
+      var e = entries[0];
+      fab.classList.toggle("is-in", !e.isIntersecting && e.boundingClientRect.top < 0);
+    }).observe(mark);
   }
 
   function setupAudienceTabs() {
@@ -173,6 +196,7 @@
     fillSiteData();
     setupMobileNav();
     setupHeaderScrollState();
+    setupFloatingWhatsApp();
     setupAudienceTabs();
     setupContactForm();
   });

@@ -54,8 +54,7 @@ html.intro-pending .intro-overlay.is-leaving {
   display: block;
   white-space: nowrap;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-variation-settings: "wdth" 112;
+  font-weight: 600;
   font-size: clamp(1.75rem, 1.2rem + 3vw, 2.75rem);
   line-height: 1;
   letter-spacing: -0.025em;
@@ -149,7 +148,7 @@ html.intro-pending .intro-overlay.is-leaving {
 }
 
 .scene-text h2 {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-h2);
   margin-bottom: var(--space-4);
   max-width: 14ch;
 }
@@ -221,7 +220,7 @@ html.intro-pending .intro-overlay.is-leaving {
 }
 
 .scene--momento .scene-text h2 {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-h1);
   max-width: 16ch;
 }
 
