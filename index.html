@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ideal Elétrica | Instalações e manutenção elétrica na Grande SP</title>
+  <title>Ideal Elétrica | Eletricista na Grande SP: instalação, quadro, câmeras e manutenção</title>
   <meta name="description" content="Instalações, manutenção e projetos elétricos residenciais, prediais, industriais e de reforma. Atendimento em Itaquaquecetuba e toda a Grande São Paulo." />
   <meta name="theme-color" content="#121417" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://idealeletrica.com/" />
   <meta property="og:url" content="https://idealeletrica.com/" />
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-variable-latin.woff2" crossorigin />
+  <link rel="preload" as="image" media="(orientation: landscape)" fetchpriority="high" imagesrcset="prototipos/teste-hero/fotos/hero-desktop-1440x810.webp 1440w, prototipos/teste-hero/fotos/hero-desktop-1920x1080.webp 1920w" imagesizes="100vw" />
+  <link rel="preload" as="image" media="(orientation: portrait)" fetchpriority="high" imagesrcset="prototipos/teste-hero/fotos/hero-mobile-750x1334.webp 750w, prototipos/teste-hero/fotos/hero-mobile-1080x1920.webp 1080w" imagesizes="100vw" />
 
   <!-- Intro: só marca o <html> se for a 1ª visita da sessão e sem reduced-motion.
        Sem JS (ou já vista) o overlay nem é exibido: o site aparece normal. -->
@@ -174,6 +177,20 @@ body[data-hv="1"] .header--over.is-scrolled{background:color-mix(in srgb,var(--k
 .kz-faq details{border:1px solid var(--kline);border-radius:16px;background:var(--kcard);padding:1rem 1.25rem;color:var(--kfg)}
 .kz-faq summary{cursor:pointer;font:700 1rem Archivo,sans-serif;list-style:none}.kz-faq summary::after{content:"+";float:right;color:#ffcc00}.kz-faq details[open] summary::after{content:"–"}
 .kz-faq p{margin:.7rem 0 0;color:var(--kdim);font:400 .95rem/1.55 Archivo,sans-serif}
+
+.kz-prob__g,.kz-cat__g{display:grid;gap:1rem;max-width:72rem;margin:0 auto}
+.kz-prob__g{grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}.kz-cat__g{grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.kz-pb,.kz-sv{display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.4rem;border-radius:22px;border:1px solid var(--kline);background:var(--kcard);color:var(--kfg);text-decoration:none;transition:border-color .2s,transform .2s}
+.kz-pb:hover,.kz-sv:hover{border-color:#ffcc00;transform:translateY(-2px)}
+.kz-pb b,.kz-sv b{font:800 1.02rem/1.15 Archivo,sans-serif;font-stretch:112%;text-transform:uppercase;letter-spacing:-.01em}
+.kz-pb span,.kz-sv__d{color:var(--kdim);font:400 .92rem/1.5 Archivo,sans-serif}
+.kz-pb i,.kz-sv i{margin-top:auto;padding-top:.4rem;font:700 .78rem Archivo,sans-serif;font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:#ffcc00}
+body[data-bg=claro] .kz-pb i,body[data-bg=claro] .kz-sv i{color:#7a5d00}
+.kz-sv__n{font:700 .75rem Archivo,sans-serif;letter-spacing:.2em;color:#ffcc00}body[data-bg=claro] .kz-sv__n{color:#7a5d00}
+.kz-cat__f{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:0 auto 1.6rem;max-width:72rem}
+.kz-cat__f button{all:unset;cursor:pointer;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--kline);font:600 .8rem Archivo,sans-serif;color:var(--kfg)}
+.kz-cat__f button[aria-pressed=true]{background:#ffcc00;color:#0d0f12;border-color:#ffcc00}.kz-cat__f button:focus-visible{outline:2px solid #ffcc00;outline-offset:2px}
+.kz-sv[hidden]{display:none}
 /* cabecalho: 0 so logo | 1 regiao+orcamento | 2 pilula do cafe | 3 ancoras */
 .kz-hl,.kz-hr,.kz-pill{display:none}.header .container{position:relative}
 .kz-hl,.kz-hr{position:absolute;top:50%;transform:translateY(-50%);align-items:center;gap:1rem;font:600 .72rem Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--kfg)}
@@ -280,8 +297,6 @@ body[data-cd=nao] .kz-glass{display:none}
 .kz-voto div{display:flex;gap:.2rem;align-items:center}.kz-voto span{opacity:.6;margin-right:.2rem}
 .kz-voto button{all:unset;white-space:nowrap;cursor:pointer;padding:.35rem .6rem;border-radius:999px}
 .kz-voto button[aria-pressed=true]{background:#ffcc00;color:#0d0f12}
-.kz-voto__t,.kz-voto__v,.kz-voto__c>div[data-k]:not([data-k=bg]){display:none!important}.kz-voto span{opacity:.9}
-.kz-aviso{flex-basis:100%;margin:0;text-align:center;font:500 .68rem/1.35 Archivo,sans-serif;opacity:.85}
 
 /* refino (relatorio Fable): FAQ clicavel inteiro, hover/foco, piso de 12px */
 .kz-faq details{padding:0}.kz-faq summary{padding:1rem 1.25rem}.kz-faq summary::-webkit-details-marker{display:none}.kz-faq p{padding:0 1.25rem 1rem;margin:0}
@@ -291,10 +306,11 @@ body[data-cd=nao] .kz-glass{display:none}
 .kz-arr:focus-visible,.kz-wh__cta:focus-visible,.kz-wh__chip:focus-visible,.kz-int__b:focus-visible,.kz-faq summary:focus-visible,.kz-hr__wa:focus-visible{outline:2px solid #ffcc00;outline-offset:3px}
 .kz-wh__pill{font-size:.75rem}.kz-wh__chip small{font-size:.75rem}.kz-eyebrow{font-size:max(.75rem,1em)}
 @media(prefers-reduced-motion:reduce){.kz-wh__cta,.kz-wh__chip,.kz-int__b{transition:none}.kz-wh__cta:hover,.kz-int__b:hover{transform:none}}
+body[data-bg=claro][data-hd="2"] .kz-pill{background:rgba(255,255,255,.7);color:#121417;border:1px solid rgba(18,20,23,.12)}body[data-bg=claro][data-hd="2"] .kz-pill a.is-on{background:#121417;color:#f4f1ea}
 .kz-voto{display:none!important}
 </style>
 </head>
-<body data-hh="0" data-hv="1" data-hd="0" data-ht="0" data-bg="quente" data-cn="chanfro" data-al="canto" data-cd="nao">
+<body data-hh="0" data-hv="1" data-hd="2" data-ht="0" data-bg="claro" data-cn="chanfro" data-al="canto" data-cd="nao">
   <div id="scroll-sentinel" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;"></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
   <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
@@ -318,7 +334,7 @@ body[data-cd=nao] .kz-glass{display:none}
         <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
       </a>
       <div class="kz-hl"><span class="kz-hl__reg">Itaquaquecetuba e região</span><a class="kz-hl__a" href="#servicos">Serviços</a></div>
-      <nav class="kz-pill" aria-label="Seções"><a href="#servicos" class="is-on">Serviços</a><a href="#trabalhos">Trabalhos</a><a href="#contato">Contato</a></nav>
+      <nav class="kz-pill" aria-label="Seções"><a href="#servicos-lista" class="is-on">Serviços</a><a href="#trabalhos">Trabalhos</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
       <div class="kz-hr"><a class="kz-hr__a" href="#contato">Contato</a><a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-hr__wa">Orçamento<span aria-hidden="true"> ↗</span></a></div>
       <div class="header-end">
         <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="btn btn-primary btn-sm nav-cta"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="nav-cta__full">Chamar no WhatsApp</span><span class="nav-cta__short">WhatsApp</span></a>
@@ -344,8 +360,9 @@ body[data-cd=nao] .kz-glass{display:none}
       <div class="kz-wh__in">
         <span class="kz-wh__pill"><i></i>Elétrica além do acabamento</span>
         <h1 class="kz-wh__h" id="kz-wh-h"><span>A gente acha a causa,</span> <em>não só religa.</em></h1>
+        <p class="kz-wh__p">Residencial, predial e industrial. Quadro, circuito e reforma feitos para durar.</p>
         <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-wh__cta">Pedir orçamento</a>
-        <ul class="kz-wh__t"><li>Itaquaquecetuba e região</li><li>Residencial, predial e industrial</li><li>Orçamento pelo WhatsApp</li></ul>
+        <ul class="kz-wh__t"><li>Itaquaquecetuba e região</li><li>Residencial, predial e industrial</li><li>Orçamento pelo WhatsApp</li><li>Visita sem custo</li></ul>
       </div>
       <figure class="kz-wh__card">
         <picture>
@@ -354,10 +371,66 @@ body[data-cd=nao] .kz-glass{display:none}
         <a class="kz-wh__chip" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero falar direto com o Diego."><i></i><span>Fale direto com o Diego<br><small>pelo WhatsApp</small></span></a>
       </figure>
     </section>
-    
+    <section class="hero hero--foto">
+      <picture class="hero-foto">
+        <source media="(orientation: landscape)" srcset="prototipos/teste-hero/fotos/hero-desktop-1440x810.webp 1440w, prototipos/teste-hero/fotos/hero-desktop-1920x1080.webp 1920w" sizes="100vw" />
+        <img src="prototipos/teste-hero/fotos/hero-mobile-1080x1920.webp" srcset="prototipos/teste-hero/fotos/hero-mobile-750x1334.webp 750w, prototipos/teste-hero/fotos/hero-mobile-1080x1920.webp 1080w" sizes="100vw" width="1080" height="1920" alt="Diego, com a mão no quadro de energia, e o sócio da Ideal Elétrica" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <span class="kz-eyebrow">Elétrica além do acabamento</span>
+            <span class="kz-gigante" aria-hidden="true">Ideal Elétrica</span>
+            <h1 class="hero-title kz-h1" id="kz-h1">O trabalho que você não vê importa tanto quanto o que você vê.</h1>
+            <p class="kz-lede">Todo quadro que montamos sai organizado, identificado e testado como se alguém fosse abrir amanhã. <span class="kz-conf"></span></p>
+            <div class="hero-actions">
+              <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica. Quero pedir um orçamento." class="kz-btn">Pedir orçamento <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- TESTE KONK: tudo abaixo da hero e so desta pagina de teste, fotos provisorias (assets/teste/ORIGEM.md) -->
     <div class="kz">
+      <section class="kz-sec kz-prob" id="problemas" aria-label="Problemas comuns">
+        <div class="kz-head kz-head--c"><span class="kz-eyebrow">Está com problema agora?</span><h2 class="kz-h">Diga o sintoma, <br>a gente acha a causa</h2></div>
+        <div class="kz-prob__g">
+          <a class="kz-pb" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e estou com este problema: Disjuntor desarmando toda hora."><b>Disjuntor desarmando toda hora</b><span>Sobrecarga, curto no circuito ou disjuntor com defeito. A gente testa, descobre qual é e corrige a causa.</span><i>Descobrir a causa →</i></a>
+          <a class="kz-pb" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e estou com este problema: Chuveiro desarmando o disjuntor."><b>Chuveiro desarmando o disjuntor</b><span>Fio fino, conexão aquecida ou disjuntor fraco. Descobrimos e deixamos o chuveiro no circuito certo.</span><i>Descobrir a causa →</i></a>
+          <a class="kz-pb" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e estou com este problema: Tomada esquentando ou cheiro de queimado."><b>Tomada esquentando ou cheiro de queimado</b><span>Conexão frouxa, fiação antiga ou tomada sobrecarregada. Desligue o circuito e chame, não espere piorar.</span><i>Descobrir a causa →</i></a>
+          <a class="kz-pb" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e estou com este problema: Levando choque."><b>Levando choque</b><span>Fuga de corrente, falta de aterramento ou fiação úmida. Desligue o disjuntor e peça atendimento.</span><i>Descobrir a causa →</i></a>
+          <a class="kz-pb" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e estou com este problema: Metade da casa sem luz."><b>Metade da casa sem luz</b><span>Fase caída, disjuntor geral ou problema no padrão de entrada. Medimos e resolvemos.</span><i>Descobrir a causa →</i></a>
+          <a class="kz-pb" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e estou com este problema: Conta de luz alta sem motivo."><b>Conta de luz alta sem motivo</b><span>Fuga de corrente ou aparelho consumindo demais. Fazemos a checagem do quadro e dos circuitos.</span><i>Descobrir a causa →</i></a>
+        </div>
+      </section>
+      <section class="kz-sec kz-cat" id="servicos-lista" aria-label="Serviços">
+        <div class="kz-head kz-head--c"><span class="kz-eyebrow">O que a gente faz</span><h2 class="kz-h">Serviços elétricos <br>da tomada ao quadro</h2></div>
+        <div class="kz-cat__f" role="group" aria-label="Filtrar serviços"><button type="button" data-f="all" aria-pressed="true">Todos</button><button type="button" data-f="top" aria-pressed="false">Mais pedidos</button><button type="button" data-f="casa" aria-pressed="false">Casa</button><button type="button" data-f="seg" aria-pressed="false">Segurança e acesso</button><button type="button" data-f="energia" aria-pressed="false">Quadro e energia</button><button type="button" data-f="emp" aria-pressed="false">Empresas</button></div>
+        <div class="kz-cat__g">
+          <a class="kz-sv" data-g="top casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Chuveiro elétrico."><span class="kz-sv__n">01</span><b>Chuveiro elétrico</b><span class="kz-sv__d">Instalação e troca, com circuito exclusivo, cabo na bitola certa e disjuntor dedicado.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="top energia" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Disjuntor e quadro de distribuição."><span class="kz-sv__n">02</span><b>Disjuntor e quadro de distribuição</b><span class="kz-sv__d">Montagem, troca, DR e DPS. Fim do desarme toda hora.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="top casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Tomadas e interruptores."><span class="kz-sv__n">03</span><b>Tomadas e interruptores</b><span class="kz-sv__d">Pontos novos, troca e tomada que esquenta ou faz faísca.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="top casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Iluminação e luminárias."><span class="kz-sv__n">04</span><b>Iluminação e luminárias</b><span class="kz-sv__d">Spots, lustres, fita de LED, pontos de luz e iluminação externa.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="top energia" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Curto-circuito e queda de energia."><span class="kz-sv__n">05</span><b>Curto-circuito e queda de energia</b><span class="kz-sv__d">Achamos a causa e religamos com segurança, sem remendo.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="top casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Ar-condicionado."><span class="kz-sv__n">06</span><b>Ar-condicionado</b><span class="kz-sv__d">Circuito elétrico, ponto e instalação do aparelho, com disjuntor certo.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="top seg" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Câmeras de segurança."><span class="kz-sv__n">07</span><b>Câmeras de segurança</b><span class="kz-sv__d">Instalação de CFTV: câmeras, gravador, cabeamento e acesso pelo celular.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="top seg" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Motor de portão eletrônico."><span class="kz-sv__n">08</span><b>Motor de portão eletrônico</b><span class="kz-sv__d">Instalação, troca e conserto de motor, controle e fotocélula.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="casa energia" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Troca de fiação."><span class="kz-sv__n">09</span><b>Troca de fiação</b><span class="kz-sv__d">Reforma de instalação antiga: fio novo, tomada e quadro sem quebrar à toa.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Ventilador de teto."><span class="kz-sv__n">10</span><b>Ventilador de teto</b><span class="kz-sv__d">Instalação com ponto reforçado, fixação firme e teste no final.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="seg" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Interfone."><span class="kz-sv__n">11</span><b>Interfone</b><span class="kz-sv__d">Instalação e conserto de interfone e porteiro eletrônico.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="energia" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Padrão de energia."><span class="kz-sv__n">12</span><b>Padrão de energia</b><span class="kz-sv__d">Montagem e adequação do padrão de entrada, caixa e medição.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="seg" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Cerca elétrica e alarme."><span class="kz-sv__n">13</span><b>Cerca elétrica e alarme</b><span class="kz-sv__d">Instalação e manutenção de cerca elétrica, central e sensores.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="energia casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Carregador de carro elétrico."><span class="kz-sv__n">14</span><b>Carregador de carro elétrico</b><span class="kz-sv__d">Wallbox com circuito dedicado, proteção e instalação segura.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Torneira elétrica e ducha."><span class="kz-sv__n">15</span><b>Torneira elétrica e ducha</b><span class="kz-sv__d">Instalação e troca com proteção e disjuntor no ponto certo.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Coifa e exaustor."><span class="kz-sv__n">16</span><b>Coifa e exaustor</b><span class="kz-sv__d">Instalação e ponto elétrico para coifa, depurador e exaustor.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="casa" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Automação residencial."><span class="kz-sv__n">17</span><b>Automação residencial</b><span class="kz-sv__d">Casa inteligente: iluminação, cortinas, tomadas e cenas pelo celular.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="energia" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Aterramento e para-raios."><span class="kz-sv__n">18</span><b>Aterramento e para-raios</b><span class="kz-sv__d">Aterramento, SPDA e proteção contra descarga e surto.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="emp" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Comercial e predial."><span class="kz-sv__n">19</span><b>Comercial e predial</b><span class="kz-sv__d">Lojas, condomínios e galpões: quadros, iluminação e manutenção.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="emp" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Industrial."><span class="kz-sv__n">20</span><b>Industrial</b><span class="kz-sv__d">Quadros, comando de motores, painéis e manutenção em planta.</span><i>Pedir pelo WhatsApp →</i></a>
+          <a class="kz-sv" data-g="emp energia" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento de: Manutenção preventiva."><span class="kz-sv__n">21</span><b>Manutenção preventiva</b><span class="kz-sv__d">Revisão do quadro, aperto de conexões e correção antes de dar problema.</span><i>Pedir pelo WhatsApp →</i></a>
+        </div>
+      </section>
       <section class="kz-sec kz-trans" aria-label="Serviços">
         <div class="kz-head kz-head--c">
           <span class="kz-eyebrow">O que fazemos</span>
@@ -447,8 +520,16 @@ body[data-cd=nao] .kz-glass{display:none}
       <section class="kz-sec kz-faq" id="duvidas" aria-label="Perguntas frequentes">
         <div class="kz-head kz-head--c"><span class="kz-eyebrow">Perguntas frequentes</span><h2 class="kz-h">O que mais <br>perguntam</h2></div>
         <div class="kz-faq__l">
-          <details><summary>Atendem condomínios e empresas?</summary><p>Sim: atendemos residencial, predial e industrial.</p></details>
-          <details><summary>Fazem quadro de distribuição e reforma de instalação antiga?</summary><p>Sim, é parte do que fazemos.</p></details>
+          <details><summary>Vocês cobram pela visita?</summary><p>Não. A visita para avaliar e passar o orçamento é sem custo, e você só paga se fechar o serviço.</p></details>
+          <details><summary>Quanto tempo demora para vocês chegarem?</summary><p>Depende da sua região e do horário. Mande o bairro e o serviço no WhatsApp e o Diego confirma o horário na hora.</p></details>
+          <details><summary>Atendem urgência?</summary><p>Sim. Escolha “É urgente” no WhatsApp e conte o que está acontecendo. Casos de risco, como cheiro de queimado e choque, vão na frente.</p></details>
+          <details><summary>Atendem condomínios e empresas?</summary><p>Sim: residências, condomínios, lojas, galpões e indústrias, do quadro ao comando de motores.</p></details>
+          <details><summary>Quais regiões vocês atendem?</summary><p>Itaquaquecetuba, Poá, Ferraz de Vasconcelos, Suzano, Arujá, Itaim Paulista, São Miguel Paulista, Guaianases e Centro de São Paulo. Se a sua não está na lista, pergunte.</p></details>
+          <details><summary>Como funciona o orçamento?</summary><p>Você conta o problema no WhatsApp, com foto se puder. O Diego avalia, agenda a visita quando precisa e passa o valor antes de começar.</p></details>
+          <details><summary>Quais formas de pagamento?</summary><p>Pix, dinheiro e cartão. Combinamos tudo antes de começar, sem surpresa no final.</p></details>
+          <details><summary>O serviço tem garantia?</summary><p>Sim. Explicamos o que a garantia cobre antes de começar e deixamos por escrito.</p></details>
+          <details><summary>Fazem quadro de distribuição e reforma de instalação antiga?</summary><p>Sim, é parte do que fazemos: quadro novo, troca de fiação, DR e DPS.</p></details>
+          <details><summary>Instalam câmeras, cerca elétrica, interfone e portão?</summary><p>Sim. Instalamos e damos manutenção em câmeras de segurança, cerca elétrica, interfone e motor de portão eletrônico.</p></details>
         </div>
       </section>
       <section class="kz-sec kz-cta" id="contato" aria-label="Pedir orçamento">
@@ -530,14 +611,13 @@ body[data-cd=nao] .kz-glass{display:none}
   <script src="assets/js/scroll-cinema.js" defer></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 <div class="kz-voto" role="group" aria-label="Chaves do teste" data-aberto="1">
-<p class="kz-aviso">Prévia para avaliação. As fotos de trabalhos são ilustrativas, de outros profissionais, e os textos com ainda dependem do Diego.</p>
 <button class="kz-voto__t" type="button" id="kv-t">Votar ▾</button>
 <div class="kz-voto__c">
 <div data-k="hd"><span>Cabeçalho</span><button data-v="0">Só logo</button><button data-v="1">Região + orçamento</button><button data-v="2">Pílula</button><button data-v="3">Âncoras</button></div>
 <div data-k="hv"><span>Hero</span><button data-v="0">Foto cheia</button><button data-v="1">Iluminada</button></div>
 <div data-k="hh"><span>Título</span><button data-v="0">Causa</button><button data-v="1">Data center</button><button data-v="2">Sem susto</button><button data-v="3">Atrás da parede</button><button data-v="4">Sem enrolação</button><button data-v="5">Explica</button></div>
 <div data-k="ht"><span>Texto antigo</span><button data-v="0">Frase 1</button><button data-v="1">Frase 2</button><button data-v="2">Logo</button></div>
-<div data-k="bg"><span>Fundo do site</span><button data-v="quente">Grafite</button><button data-v="claro">Claro</button></div>
+<div data-k="bg"><span>Fundo</span><button data-v="quente">Grafite</button><button data-v="claro">Claro</button></div>
 <div data-k="cn"><span>Cantos</span><button data-v="chanfro">Chanfro</button><button data-v="redondo">Redondo</button></div>
 <div data-k="al"><span>Títulos</span><button data-v="canto">Canto</button><button data-v="centro">Centro</button></div>
 <div data-k="cd"><span>Cartões</span><button data-v="sim">Com</button><button data-v="nao">Sem</button></div>
@@ -550,10 +630,10 @@ body[data-cd=nao] .kz-glass{display:none}
 (function(){
 var F=["O trabalho que você não vê importa tanto quanto o que você vê.","Quem faz o seu orçamento é quem põe a mão no quadro."];
 var HH=[["A gente acha a causa,","não só religa."],["Padrão de data center,","em casa e na obra."],["Quadro certo,","sem susto."],["O que fica atrás da parede,","feito para durar."],["Do diagnóstico ao quadro,","sem enrolação."],["Eletricista que explica","antes de mexer."]],wh=document.getElementById("kz-wh-h");
-var h=document.getElementById("kz-h1"),P=new URLSearchParams(location.search),st={hh:"0",hv:"1",hd:"0",ht:"0",bg:"quente",cn:"chanfro",al:"canto",cd:"nao"};
+var h=document.getElementById("kz-h1"),P=new URLSearchParams(location.search),st={hh:"0",hv:"1",hd:"2",ht:"0",bg:"claro",cn:"chanfro",al:"canto",cd:"nao"};
 for(var k in st)if(P.get(k)!==null)st[k]=P.get(k);
 function ap(){for(var k in st)document.body.dataset[k]=st[k];var t=HH[+st.hh]||HH[0];wh.innerHTML="<span>"+t[0]+"</span> <em>"+t[1]+"</em>";
-
+h.textContent=F[st.ht==="1"?1:0];
 document.querySelectorAll(".kz-voto__c > div[data-k]").forEach(function(d){d.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.v===st[d.dataset.k])})})}
 document.querySelectorAll(".kz-voto__c > div[data-k]").forEach(function(d){d.querySelectorAll("button").forEach(function(x){x.onclick=function(){st[d.dataset.k]=x.dataset.v;ap()}})});
 ap();
@@ -577,6 +657,10 @@ if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es
 var rl=document.getElementById("kz-reel");
 document.querySelectorAll(".kz-arr").forEach(function(b){b.onclick=function(){rl.scrollBy({left:(+b.dataset.d)*rl.clientWidth*.6,behavior:"smooth"})}});
 })();
+</script>
+<script>
+(function(){var b=document.querySelectorAll(".kz-cat__f button"),c=document.querySelectorAll(".kz-sv");
+b.forEach(function(x){x.onclick=function(){b.forEach(function(y){y.setAttribute("aria-pressed",y===x)});c.forEach(function(k){k.hidden=x.dataset.f!=="all"&&k.dataset.g.split(" ").indexOf(x.dataset.f)<0})}})})();
 </script>
 </body>
 </html>
