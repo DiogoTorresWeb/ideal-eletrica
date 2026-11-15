@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-logo="L3" data-paleta="P1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ideal Elétrica | Prévia do novo site</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Instalações, manutenção e projetos elétricos residenciais, prediais, industriais e de reforma. Atendimento em Itaquaquecetuba e toda a Grande São Paulo." />
+  <meta name="theme-color" content="#121417" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <meta property="og:url" content="https://idealeletrica.com/previa.html" />
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-variable-latin.woff2" crossorigin />
+
+  <!-- Intro: só marca o <html> se for a 1ª visita da sessão e sem reduced-motion.
+       Sem JS (ou já vista) o overlay nem é exibido: o site aparece normal. -->
+  <script>try{if(sessionStorage.getItem("ie_intro_seen")!=="1"&&!matchMedia("(prefers-reduced-motion: reduce)").matches){sessionStorage.setItem("ie_intro_seen","1");document.documentElement.classList.add("intro-pending")}}catch(e){}</script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Consent Mode v2: tudo negado até a pessoa decidir. Não carrega ferramenta. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+      functionality_storage: "granted",
+      security_storage: "granted",
+      wait_for_update: 500
+    });
+  </script>
+  <link rel="stylesheet" href="assets/css/scroll-cinema.css" />
+
+<style>
+/* TESTE-HERO: tudo aqui é só desta página de teste */
+.hero--foto{background:#121417}
+.hero--foto .hero-foto{position:absolute;inset:0;z-index:0}
+.hero--foto .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
+.hero--foto .hero-title{text-wrap:balance}
+@media (max-height:500px){:root{--header-h:56px}}
+.hero--foto .hero-inner{align-items:flex-start;padding-block:calc(var(--header-h) + 2.5rem) 2rem}
+.hero--foto .hero-content{max-width:34rem}
+.hero--foto .hero-actions{margin-top:var(--space-5)}
+@media (min-width:1100px) and (min-height:600px){
+  .hero--foto .hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,23,.82) 0%,rgba(18,20,23,.5) 34%,rgba(18,20,23,0) 60%)}
+  .hero--foto .hero-foto img{object-position:right center}
+  .hero--foto .hero-inner{align-items:center;padding-block:calc(var(--space-7) + var(--header-h)) var(--space-7)}
+  .hero--foto .hero-content{max-width:30rem}
+  .hero--foto .hero-title{font-size:clamp(2.25rem,3.4vw,3.75rem)}
+  .hero--foto .hero-inner{margin-inline:0;max-width:none}
+  .header .container{max-width:none;padding-inline:clamp(1.5rem,4vw,4rem)}
+  .hero--foto>.container{max-width:none;padding-inline:clamp(1.5rem,4vw,4rem)}
+}
+/* paisagem pequena (tablet deitado, celular deitado): texto em cima, foto inteira embaixo, sem sobrepor rosto */
+@media (orientation:landscape) and (max-width:1099.98px),(orientation:landscape) and (max-height:599.98px){
+  .hero--foto{display:flex;flex-direction:column}
+  .hero--foto .hero-foto{position:relative;inset:auto;order:2;aspect-ratio:16/9}
+  .hero--foto .hero-inner{min-height:0;padding-block:calc(var(--header-h) + 1rem) 1.25rem}
+  .hero--foto .hero-title{font-size:clamp(1.75rem,4vw,2.75rem)}
+  .hero--foto .hero-content{max-width:40rem}
+  .hero--foto .lede{display:none}
+}
+/* Rodada 2: o que o Diogo gostou (brilho só em 2 títulos, números grandes, galeria arredondada) */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .luz{--base:rgba(244,241,234,.9);--pico:#fffdf7;background-image:linear-gradient(100deg,var(--base) 0%,var(--base) 30%,var(--pico) 50%,var(--base) 70%,var(--base) 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:luz 11s ease-in-out infinite alternate}
+}
+@keyframes luz{to{background-position:0 0}}
+@media (prefers-reduced-motion:reduce){.luz{animation:none;background-position:50% 0}}
+.trabalho-media{border-radius:28px}
+.trabalho-num{font-size:clamp(2.75rem,6vw,4.5rem);line-height:1;letter-spacing:-.02em;opacity:.9}
+@media (orientation:portrait) and (max-height:760px){.hero--foto .lede{display:none}}
+.th-quem,.th-servico{padding-block:3rem}
+.th-quem h2{margin-bottom:1.5rem}
+.th-quem__fotos{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.th-quem__fotos img,.th-servico img{width:100%;height:auto;border-radius:16px;display:block}
+
+/* CARTAO: hero solta na pagina, cantos 28px, cabecalho limpo em cima; gancho de cartoes vaza a base */
+.hero--foto{margin:calc(var(--header-h) + .5rem) 1rem 0;border-radius:28px;overflow:hidden}
+.hero--foto .hero-inner{padding-block:2.5rem 3.5rem}
+@media (min-width:1100px) and (min-height:600px){
+  .hero--foto{margin-inline:clamp(1rem,2.5vw,2rem)}
+  .hero--foto .hero-inner{padding-block:var(--space-7) calc(var(--space-7) + 2rem)}
+  .hero--foto .hero-content{max-width:25rem}
+  .hero--foto .hero-title{font-size:clamp(2rem,2.7vw,3.25rem)}
+}
+@media (orientation:landscape) and (max-width:1099.98px),(orientation:landscape) and (max-height:599.98px){
+  .hero--foto .hero-inner{padding-block:1rem 1.25rem}
+}
+.th-gancho{position:relative;z-index:2;margin:-2.25rem 1.5rem 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+@media (min-width:1100px){.th-gancho{margin-inline:clamp(2rem,5vw,4rem);gap:1rem}}
+.th-gancho a{display:flex;flex-direction:column;gap:.25rem;padding:.9rem 1rem;border-radius:20px;background:rgba(32,35,40,.72);border:1px solid rgba(244,241,234,.16);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#f4f1ea;text-decoration:none;font-weight:600;font-size:.9rem;line-height:1.2}
+.th-gancho a b{color:#ffcc00;font-size:.75rem;letter-spacing:.08em}
+@media (min-width:700px){.th-gancho a{font-size:1.05rem;padding:1.1rem 1.4rem}}
+.th-voto{position:fixed;left:50%;bottom:.75rem;transform:translateX(-50%);z-index:60;display:flex;gap:.25rem;padding:.3rem;border-radius:999px;background:rgba(18,20,23,.92);border:1px solid rgba(244,241,234,.2);font:600 .75rem Archivo,sans-serif}
+.th-voto button{all:unset;white-space:nowrap;cursor:pointer;padding:.45rem .8rem;border-radius:999px;color:#f4f1ea}
+.th-voto button[aria-pressed=true]{background:#ffcc00;color:#121417}
+
+/* TRANSICAO: faixa com cantos abrindo sobre a base da hero, titulo grande no meio, cartoes de vidro; chaves por data-* no body */
+.hero--foto{position:relative}
+.hero--foto>.container{position:relative;z-index:2}
+.hero--foto::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;z-index:1;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--tbg,#121417))}
+body{--tbg:#121417;--tfg:#f4f1ea;--tcard:rgba(244,241,234,.07);--tline:rgba(244,241,234,.16);--ft:"Bricolage Grotesque",system-ui,sans-serif;--fw:700}
+body[data-b=claro]{--tbg:#f4f1ea;--tfg:#121417;--tcard:rgba(255,255,255,.55);--tline:rgba(18,20,23,.12)}
+.th-trans{position:relative;z-index:3;margin-top:-2.5rem;border-radius:28px 28px 0 0;padding:3.25rem 1.5rem 2.5rem;text-align:center;color:var(--tfg);background:radial-gradient(70% 90% at 15% 0%,rgba(255,204,0,.16),transparent 62%),radial-gradient(60% 80% at 90% 8%,rgba(255,150,60,.10),transparent 62%),var(--tbg)}
+body[data-b=claro] .th-trans{background:radial-gradient(70% 90% at 15% 0%,rgba(255,204,0,.30),transparent 62%),radial-gradient(60% 80% at 90% 8%,rgba(255,180,90,.18),transparent 62%),var(--tbg)}
+body[data-b=faixa] .th-trans{background:linear-gradient(#ffcc00 0 6px,transparent 6px),var(--tbg)}
+.th-trans__t{font-family:var(--ft);font-weight:var(--fw);font-size:clamp(2.25rem,9vw,5rem);line-height:1;letter-spacing:-.02em;margin:0 0 .75rem;text-wrap:balance}
+.th-trans__s{max-width:34rem;margin:0 auto 2rem;opacity:.8;font-size:1.05rem}
+.th-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;max-width:52rem;margin:0 auto}
+.th-cards a{display:flex;flex-direction:column;gap:.25rem;padding:1rem;border-radius:20px;text-align:left;background:var(--tcard);border:1px solid var(--tline);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--tfg);text-decoration:none;font-weight:600;font-size:.9rem;line-height:1.2}
+.th-cards a b{color:#ffcc00;font-size:.75rem;letter-spacing:.08em}
+body[data-b=claro] .th-cards a b{color:#8a6a00}
+body[data-c=nao] .th-cards{display:none}
+body[data-c=nao] .th-trans{padding-bottom:1.5rem}
+body[data-f="1"]{--ft:Archivo,system-ui,sans-serif;--fw:900}
+body[data-f="2"]{--ft:Outfit,system-ui,sans-serif;--fw:800}
+@media (min-width:700px){.th-cards a{font-size:1.05rem;padding:1.25rem 1.5rem}.th-trans{padding-top:4rem}}
+@media (min-width:1100px){.th-trans{margin-inline:clamp(1rem,2.5vw,2rem)}}
+.th-logo,.th-selo{display:none}
+body[data-t="1"] .hero--foto .hero-title{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:500}
+body[data-t="1"] .hero--foto .lede{display:none}
+@media (min-width:1100px) and (min-height:600px){body[data-t="1"] .hero--foto .hero-title{font-size:clamp(1.75rem,2.1vw,2.4rem)}}
+body[data-t="2"] .th-logo{display:block;font:800 clamp(4.5rem,22vw,8rem)/.9 var(--ft);letter-spacing:-.04em;margin-bottom:.5rem}
+body[data-t="2"] .th-logo i{color:#ffcc00;font-style:normal}
+body[data-t="2"] .hero--foto .hero-title{font-size:1.1rem;font-weight:500}
+body[data-t="2"] .hero--foto .lede,body[data-t="2"] .hero--foto .eyebrow{display:none}
+body[data-t="3"] .th-selo{display:inline-block;background:#ffcc00;color:#121417;font-weight:700;font-size:.8rem;padding:.4rem .8rem;border-radius:999px;transform:rotate(-6deg);margin-bottom:.75rem}
+body[data-t="3"] .hero--foto .eyebrow,body[data-t="3"] .hero--foto .lede{display:none}
+.th-voto{position:fixed;left:.5rem;right:.5rem;bottom:.5rem;z-index:60;display:flex;flex-wrap:wrap;gap:.35rem .75rem;justify-content:center;padding:.4rem;border-radius:18px;background:rgba(18,20,23,.94);border:1px solid rgba(244,241,234,.2);font:600 .7rem Archivo,sans-serif;color:#f4f1ea}
+.th-voto div{display:flex;gap:.2rem;align-items:center}.th-voto span{opacity:.6;margin-right:.2rem}
+.th-voto button{all:unset;white-space:nowrap;cursor:pointer;padding:.35rem .6rem;border-radius:999px}
+.th-voto button[aria-pressed=true]{background:#ffcc00;color:#121417}
+
+/* ===== TESTE KONK: Archivo 800 expandida (valores lidos no site de referencia), cantos chanfrados ou redondos, tudo por data-* no body ===== */
+body{--kbg:#0d0f12;--kfg:#f4f1ea;--kdim:rgba(244,241,234,.68);--kline:rgba(244,241,234,.14);--keyb:#ffcc00;--kglow1:rgba(255,190,90,.20);--kglow2:rgba(255,204,0,.10);--kn:22px;--kcard:rgba(244,241,234,.07);background:var(--kbg)}
+html{background:#0d0f12}
+body[data-bg=claro]{--kbg:#f4f1ea;--kfg:#121417;--kdim:rgba(18,20,23,.68);--kline:rgba(18,20,23,.14);--keyb:#8a6a00;--kglow1:rgba(255,204,0,.30);--kglow2:rgba(255,170,90,.18);--kcard:rgba(255,255,255,.6)}
+html:has(body[data-bg=claro]){background:#f4f1ea}
+.header--over:not(.is-scrolled) .nav-toggle,.header--over .nav-toggle,.nav-cta{display:none!important}
+.header .container{justify-content:center}
+
+/* hero iluminada: luz quente no escuro e no claro, destaque em italico serifado, cartao redondo com a foto */
+.kz-wh{display:none;position:relative;overflow:hidden;padding:calc(var(--header-h,72px) + 2.5rem) 1rem 0;text-align:center;color:var(--kfg);background:var(--kbg);isolation:isolate}
+body[data-hv="1"] .kz-wh{display:block}body[data-hv="1"] .hero--foto{display:none}
+.kz-wh::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 55% at 50% -8%,var(--kglow1),transparent 70%),radial-gradient(45% 40% at 10% 30%,var(--kglow2),transparent 70%),radial-gradient(45% 40% at 92% 22%,rgba(255,150,90,.16),transparent 70%)}
+body[data-bg=claro] .kz-wh::before{background:radial-gradient(65% 60% at 50% -10%,rgba(255,196,60,.55),transparent 70%),radial-gradient(45% 40% at 8% 28%,rgba(255,170,110,.30),transparent 70%),radial-gradient(45% 40% at 94% 20%,rgba(255,225,150,.40),transparent 70%)}
+.kz-wh__in{max-width:56rem;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.25rem}
+.kz-wh__pill{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .9rem;border-radius:999px;border:1px solid var(--kline);background:var(--kcard);font:700 .68rem Archivo,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--kdim)}
+.kz-wh__pill i,.kz-wh__t li::before,.kz-wh__chip i{width:.45rem;height:.45rem;border-radius:50%;background:#ffcc00;display:inline-block}
+.kz-wh__h{margin:0;font:800 clamp(2rem,5.2vw,4.6rem)/.92 Archivo,sans-serif;font-stretch:112%;text-transform:uppercase;letter-spacing:-.035em;text-wrap:balance}
+.kz-wh__h em{font-style:normal;color:#ffcc00}
+body[data-bg=claro] .kz-wh__h em{color:#b07d00}
+.kz-wh__p{margin:0;max-width:36rem;color:var(--kdim);font:400 clamp(1rem,1.5vw,1.15rem)/1.55 Archivo,sans-serif}.kz-wh__p small{opacity:.7}
+.kz-wh__cta{display:inline-block;padding:.95rem 1.7rem;border-radius:999px;background:#f4f1ea;color:#0d0f12;font:700 .95rem Archivo,sans-serif;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+body[data-bg=claro] .kz-wh__cta{background:#121417;color:#f4f1ea}
+.kz-wh__t{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;justify-content:center;margin:.4rem 0 0;padding:0;list-style:none;font:500 .85rem Archivo,sans-serif;color:var(--kdim)}
+.kz-wh__t li{display:flex;align-items:center;gap:.5rem}
+body[data-hv="1"] .header--over{background:none!important;box-shadow:none!important}body[data-hv="1"] .header--over::before,body[data-hv="1"] .header--over::after{display:none!important}
+body[data-hv="1"][data-bg=claro] .header .f-w{fill:#121417}body[data-hv="1"][data-bg=claro] .header .s-w{stroke:#121417}
+body[data-hv="1"][data-bg=claro] .kz-hl,body[data-hv="1"][data-bg=claro] .kz-hr{color:#121417}
+body[data-hv="1"] .header--over.is-scrolled{background:color-mix(in srgb,var(--kbg) 88%,transparent)!important;backdrop-filter:blur(10px)}
+.kz-wh__card{position:relative;margin:clamp(2rem,4vw,3.5rem) auto 0;max-width:68rem;aspect-ratio:16/7;border-radius:28px 28px 0 0;overflow:hidden;border:0;box-shadow:none}
+.kz-wh__card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(to bottom,transparent,var(--kbg) 100%);pointer-events:none}
+.kz-wh__card img{width:100%;height:100%;object-fit:cover;object-position:60% 30%;display:block}
+.kz-wh__chip{z-index:2;position:absolute;right:1.25rem;bottom:2.5rem;display:flex;align-items:center;gap:.7rem;padding:.7rem 1.1rem;border-radius:999px;background:rgba(13,15,18,.78);backdrop-filter:blur(10px);color:#f4f1ea;font:600 .82rem/1.25 Archivo,sans-serif;text-align:left}
+.kz-wh__chip small{opacity:.65;font-weight:500}.kz-wh__chip i{width:1.7rem;height:1.7rem;background:radial-gradient(circle at 35% 30%,#ffe28a,#e8a317)}
+@media(min-width:900px){.kz-wh{padding-inline:0}.kz-wh__in{padding-inline:1rem}.kz-wh__card{max-width:none;margin-inline:.75rem;aspect-ratio:16/6.4}.kz-wh__card img{transform:scale(1.22);transform-origin:61% 36%;object-position:center 30%}}
+@media(max-width:760px){.kz-wh__card{aspect-ratio:4/3.4;border-radius:22px 22px 0 0}.kz-wh__card img{object-position:68% 30%}.kz-wh__chip{right:.75rem;bottom:.75rem;padding:.5rem .8rem;font-size:.72rem}.kz-wh__t{font-size:.78rem;gap:.3rem 1rem}}
+.kz-int__g{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;max-width:68rem;margin:0 auto}
+.kz-int__b{display:flex;flex-direction:column;gap:.4rem;padding:1.3rem 1.4rem;border-radius:22px;border:1px solid var(--kline);background:var(--kcard);color:var(--kfg);text-decoration:none}
+.kz-int__b b{font:800 1rem Archivo,sans-serif;font-stretch:112%;text-transform:uppercase;letter-spacing:-.01em}.kz-int__b span{color:var(--kdim);font:400 .9rem/1.45 Archivo,sans-serif}.kz-int__b small,.kz-faq small{opacity:.7}
+.kz-int__b:hover{border-color:#ffcc00}
+.kz-faq__l{max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
+.kz-faq details{border:1px solid var(--kline);border-radius:16px;background:var(--kcard);padding:1rem 1.25rem;color:var(--kfg)}
+.kz-faq summary{cursor:pointer;font:700 1rem Archivo,sans-serif;list-style:none}.kz-faq summary::after{content:"+";float:right;color:#ffcc00}.kz-faq details[open] summary::after{content:"–"}
+.kz-faq p{margin:.7rem 0 0;color:var(--kdim);font:400 .95rem/1.55 Archivo,sans-serif}
+/* cabecalho: 0 so logo | 1 regiao+orcamento | 2 pilula do cafe | 3 ancoras */
+.kz-hl,.kz-hr,.kz-pill{display:none}.header .container{position:relative}
+.kz-hl,.kz-hr{position:absolute;top:50%;transform:translateY(-50%);align-items:center;gap:1rem;font:600 .72rem Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--kfg)}
+.kz-hl{left:var(--gutter,1.25rem)}.kz-hr{right:var(--gutter,1.25rem)}
+.kz-hl a,.kz-hr a,.kz-pill a{color:inherit;text-decoration:none}
+.kz-hr__wa{background:#ffcc00;color:#0d0f12!important;padding:.55rem 1rem;border-radius:999px;font-weight:700}
+.kz-hl__reg::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:#ffcc00;margin-right:.5rem}
+body[data-hd="1"] .kz-hl,body[data-hd="1"] .kz-hr{display:flex}body[data-hd="1"] .kz-hl__a,body[data-hd="1"] .kz-hr__a{display:none}
+body[data-hd="3"] .kz-hl,body[data-hd="3"] .kz-hr{display:flex}body[data-hd="3"] .kz-hl__reg,body[data-hd="3"] .kz-hr__wa{display:none}
+body[data-hd="2"] .kz-hr{display:flex}body[data-hd="2"] .kz-hr__a{display:none}
+body[data-hd="2"] .container{justify-content:center;min-height:3.5rem}body[data-hd="2"] .header .brand{grid-column:1/-1!important;grid-row:1!important;position:absolute!important;left:1.25rem!important;right:auto!important;top:50%!important;transform:translateY(-50%)!important;margin:0!important}
+body[data-hd="2"] .kz-pill{grid-column:2;grid-row:1;justify-self:center;display:flex;gap:.2rem;padding:.3rem;border-radius:999px;background:rgba(13,15,18,.45);backdrop-filter:blur(8px);font:600 .72rem Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#f4f1ea}
+body[data-hd="2"] .kz-pill a{padding:.5rem .9rem;border-radius:999px}body[data-hd="2"] .kz-pill a.is-on{background:#f4f1ea;color:#0d0f12}
+body[data-hd="2"] .header-start,body[data-hd="2"] .header-end{display:none}
+@media(max-width:760px){.kz-hl__reg{display:none!important}body[data-hd="2"] .kz-pill{display:none}.kz-hl,.kz-hr{font-size:.62rem;letter-spacing:.1em;gap:.6rem}.kz-hr__wa{padding:.45rem .7rem}}
+
+.hero--foto::after{height:46%;background:linear-gradient(to bottom,transparent,var(--kbg) 100%)}
+.hero--foto{border-radius:28px 28px 0 0;background:var(--kbg)}
+.hero--foto .hero-inner{min-height:min(86svh,780px);align-items:flex-end;padding-block:3rem 2.5rem}
+.hero--foto .hero-content{max-width:46rem;text-align:center;margin-inline:auto}
+@media (max-width:1099.98px) and (orientation:portrait){
+  .hero--foto .hero-inner{align-items:flex-start;padding-block:2.25rem 0;min-height:min(76svh,610px)}
+  .hero--foto .kz-lede{display:none}
+  .hero--foto .hero-actions{margin-top:1.1rem}
+}
+.kz-eyebrow{display:block;font:700 .72rem/1.2 Archivo,system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--keyb);margin-bottom:.9rem}
+.hero--foto .kz-eyebrow{color:#ffcc00}
+.kz-h,.kz-h1{font-family:Archivo,system-ui,sans-serif;font-weight:800;font-stretch:112%;text-transform:uppercase;letter-spacing:-.035em;line-height:.9;text-wrap:balance;margin:0}
+.hero--foto .kz-h1{font-size:clamp(1.55rem,6.6vw,3.1rem);color:#f6f3ec;background:none;-webkit-text-fill-color:#f6f3ec;animation:none}
+.kz-lede{margin:1rem auto 0;max-width:34rem;font-size:1rem;line-height:1.5;color:rgba(244,241,234,.8)}
+.kz-conf{font-size:.7rem;opacity:.6}
+.hero--foto .hero-actions{margin-top:1.4rem;justify-content:center;display:flex}
+.kz-gigante{display:none;font:800 clamp(2.6rem,12.5vw,9rem)/.82 Archivo,system-ui,sans-serif;font-stretch:112%;text-transform:uppercase;letter-spacing:-.045em;color:#f6f3ec;margin-bottom:1rem}
+body[data-ht="2"] .kz-gigante{display:block}
+body[data-ht="2"] .hero--foto .kz-h1{font-size:clamp(1rem,3.2vw,1.5rem);letter-spacing:-.02em}
+body[data-ht="2"] .kz-lede,body[data-ht="2"] .hero--foto .kz-eyebrow{display:none}
+.kz-btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem;background:#ffcc00;color:#0d0f12;font:700 .8rem/1 Archivo,system-ui,sans-serif;font-stretch:106%;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.kz-btn--o{background:transparent;color:var(--kfg);box-shadow:inset 0 0 0 1px var(--kline);clip-path:none;border-radius:0}
+body[data-cn=redondo] .kz-btn{clip-path:none;border-radius:999px}
+body[data-cn=redondo] .kz-btn--o{border-radius:999px}
+.kz{overflow-x:clip;position:relative;background:var(--kbg);color:var(--kfg);margin-top:-1px}
+.kz-sec{padding:4.5rem 1.25rem;position:relative}
+@media (min-width:700px){.kz-glass a{padding:1.1rem 1.2rem;font-size:1rem}}
+@media (min-width:1100px){.kz-sec{padding:6.5rem clamp(2rem,5vw,5rem)}}
+.kz-trans{padding-top:2rem;background:radial-gradient(60% 55% at 15% 40%,var(--kglow1),transparent 70%),radial-gradient(50% 50% at 92% 85%,var(--kglow2),transparent 70%)}
+.kz-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:2.5rem}
+.kz-head--c{display:block;text-align:center}
+.kz-big{font-size:clamp(2.1rem,9vw,5.4rem)}
+.kz-huge{font-size:clamp(2.8rem,13vw,8.6rem)}
+.kz-sub{max-width:34rem;margin:1.25rem auto 0;color:var(--kdim);font-size:1.05rem;line-height:1.5}
+.kz-link{font:700 .72rem/1 Archivo,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--keyb);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.45rem;white-space:nowrap}
+body[data-al=centro] .kz-head{display:block;text-align:center}
+body[data-al=centro] .kz-head>.kz-link,body[data-al=centro] .kz-head>.kz-arrows{display:inline-flex;margin-top:1.25rem}
+.kz-media{display:block;overflow:hidden;clip-path:polygon(0 0,calc(100% - var(--kn)) 0,100% var(--kn),100% 100%,var(--kn) 100%,0 calc(100% - var(--kn)))}
+.kz-media img{display:block;width:100%;height:100%;object-fit:cover}
+body[data-cn=redondo]{--kn:0px}
+body[data-cn=redondo] .kz-media{clip-path:none;border-radius:24px}
+.kz-glass{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;max-width:56rem;margin:2.5rem auto 0}
+.kz-glass a{display:flex;flex-direction:column;gap:.3rem;padding:.9rem .8rem;font-size:.85rem;border-radius:22px;background:var(--kcard);border:1px solid var(--kline);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--kfg);text-decoration:none;font-weight:600;line-height:1.2}
+.kz-glass a b{color:var(--keyb);font-size:.75rem;letter-spacing:.08em}
+body[data-cd=nao] .kz-glass{display:none}
+.kz-serv{padding-top:1rem}
+.kz-serv__grid{display:grid;gap:0}
+.kz-row{display:grid;grid-template-columns:2.4rem 1fr auto;gap:.2rem 1rem;align-items:start;padding:1.75rem 0;border-top:1px solid var(--kline);color:var(--kfg);text-decoration:none}
+.kz-row:last-child{border-bottom:1px solid var(--kline)}
+.kz-row__n{font:700 .72rem/1 Archivo,sans-serif;letter-spacing:.2em;color:var(--keyb);padding-top:.7rem}
+.kz-row__t{font-size:clamp(1.8rem,8vw,3.2rem)}
+.kz-row__d{display:block;margin-top:.7rem;color:var(--kdim);line-height:1.5;max-width:28rem}
+.kz-row__ar{color:var(--kdim);padding-top:.5rem}
+.kz-row__m{grid-column:1/-1;aspect-ratio:4/3;margin-top:1rem}
+.kz-sticky{display:none}
+@media (min-width:900px){
+  .kz-serv__grid{grid-template-columns:1fr 1.05fr;gap:4rem;align-items:start}
+  .kz-row__m{display:none}
+  .kz-sticky{display:block;position:sticky;top:6rem;aspect-ratio:4/5;max-height:80svh}
+  .kz-sticky__i{position:absolute;inset:0;opacity:0;transition:opacity .5s cubic-bezier(.22,1,.36,1)}
+  .kz-sticky__i.is-on{opacity:1}
+  .kz-row{padding:2.5rem 0;transition:padding-left .35s cubic-bezier(.22,1,.36,1)}
+  .kz-row:hover{padding-left:.75rem}
+  .kz-row__t{font-size:clamp(2rem,3.4vw,3.4rem)}
+}
+.kz-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:-1.25rem;padding-inline:1.25rem}
+.kz-track{scroll-padding-inline:1.25rem}
+.kz-track::-webkit-scrollbar{display:none}
+@media (min-width:1100px){.kz-track{margin-inline:calc(-1*clamp(2rem,5vw,5rem));padding-inline:clamp(2rem,5vw,5rem);scroll-padding-inline:clamp(2rem,5vw,5rem)}}
+.kz-card{flex:0 0 82%;scroll-snap-align:start;margin:0}
+.kz-card__m{aspect-ratio:4/3}
+.kz-card figcaption{padding-top:.9rem}
+.kz-card small{display:block;font:700 .68rem/1 Archivo,sans-serif;letter-spacing:.2em;color:var(--keyb);margin-bottom:.5rem}
+.kz-card b{font-size:1.25rem;letter-spacing:-.02em}
+@media (min-width:900px){.kz-card{flex-basis:38%}}
+.kz-track--v .kz-reel__i{flex:0 0 62%;aspect-ratio:9/14;scroll-snap-align:start}
+@media (min-width:900px){.kz-track--v .kz-reel__i{flex-basis:21%}}
+.kz-arrows{display:flex;gap:.6rem}
+.kz-arr{all:unset;cursor:pointer;width:2.8rem;height:2.8rem;border:1px solid var(--keyb);border-radius:999px;display:grid;place-items:center;color:var(--keyb);font-size:1.4rem;line-height:1}
+.kz-ig{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.kz-ig__i{aspect-ratio:3/4}
+@media (min-width:900px){.kz-ig{grid-template-columns:repeat(6,1fr);gap:.6rem}}
+.kz-cta{text-align:center;padding-block:6rem 7rem;background:radial-gradient(70% 70% at 0% 0%,var(--kglow1),transparent 70%)}
+.kz-cta__btns{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2.25rem}
+.kz-voto{position:fixed;left:.5rem;right:.5rem;bottom:.5rem;z-index:60;display:flex;flex-wrap:wrap;gap:.35rem .75rem;justify-content:center;padding:.4rem;border-radius:18px;background:rgba(13,15,18,.94);border:1px solid rgba(244,241,234,.2);font:600 .7rem Archivo,sans-serif;color:#f4f1ea}
+.kz-voto{flex-direction:column;align-items:center}.kz-voto[data-aberto="0"] .kz-voto__c{display:none}.kz-voto__c{display:flex;flex-wrap:wrap;gap:.35rem .75rem;justify-content:center}
+.kz-voto__v input,.kz-voto__v select{font:inherit;font-size:.75rem;padding:.3rem .5rem;border-radius:8px;border:1px solid rgba(244,241,234,.3);background:#1b1e23;color:#f4f1ea}.kz-voto__v input{min-width:14rem}.kz-voto__v button[aria-pressed=true]{background:#ffcc00;color:#0d0f12}.kz-voto em{font-style:normal;color:#ffcc00;min-width:3rem}
+.kz-voto div{display:flex;gap:.2rem;align-items:center}.kz-voto span{opacity:.6;margin-right:.2rem}
+.kz-voto button{all:unset;white-space:nowrap;cursor:pointer;padding:.35rem .6rem;border-radius:999px}
+.kz-voto button[aria-pressed=true]{background:#ffcc00;color:#0d0f12}
+.kz-voto__t,.kz-voto__v,.kz-voto__c>div[data-k]:not([data-k=bg]){display:none!important}.kz-voto span{opacity:.9}
+.kz-aviso{flex-basis:100%;margin:0;text-align:center;font:500 .68rem/1.35 Archivo,sans-serif;opacity:.85}
+</style>
+</head>
+<body>
+  <div id="scroll-sentinel" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+  <div class="intro-overlay" id="intro">
+    <div class="intro-mark" aria-hidden="true">
+      <svg class="logo-svg intro-logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
+      <span class="intro-word"><span class="intro-word-inner">Ideal Elétrica</span></span>
+    </div>
+    <button type="button" class="intro-skip" id="intro-skip">Pular</button>
+  </div>
+
+  <header class="header header--over">
+    <div class="container">
+      <div class="header-start">
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+      <a href="index.html" class="brand" aria-label="Ideal Elétrica">
+        <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
+      </a>
+      <div class="kz-hl"><span class="kz-hl__reg">Itaquaquecetuba e região</span><a class="kz-hl__a" href="#servicos">Serviços</a></div>
+      <nav class="kz-pill" aria-label="Seções"><a href="#servicos" class="is-on">Serviços</a><a href="#trabalhos">Trabalhos</a><a href="#contato">Contato</a></nav>
+      <div class="kz-hr"><a class="kz-hr__a" href="#contato">Contato</a><a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-hr__wa">Orçamento<span aria-hidden="true"> ↗</span></a></div>
+      <div class="header-end">
+        <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="btn btn-primary btn-sm nav-cta"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="nav-cta__full">Chamar no WhatsApp</span><span class="nav-cta__short">WhatsApp</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button type="button" class="mobile-menu-close" aria-label="Fechar menu">×</button>
+    <nav class="mobile-menu-links" aria-label="Navegação principal">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero falar sobre um serviço." class="btn btn-primary"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>Chamar no WhatsApp</a>
+  </div>
+
+  <main id="conteudo">
+    <!-- TESTE-HERO: foto dos sócios em tela cheia (modo teste, não oficial) -->
+    <!-- TESTE hero iluminada (ideia do print Worth: luz quente + destaque em italico + cartao com a foto) -->
+    <section class="kz-wh" aria-label="Apresentação">
+      <div class="kz-wh__in">
+        <span class="kz-wh__pill"><i></i>Elétrica além do acabamento</span>
+        <h1 class="kz-wh__h" id="kz-wh-h"><span>A gente acha a causa,</span> <em>não só religa.</em></h1>
+        <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-wh__cta">Pedir orçamento</a>
+        <ul class="kz-wh__t"><li>Itaquaquecetuba e região</li><li>Residencial, predial e industrial</li><li>Orçamento pelo WhatsApp</li><li>Visita sem custo <small>[CONFIRMAR]</small></li></ul>
+      </div>
+      <figure class="kz-wh__card">
+        <picture>
+          <img src="prototipos/teste-hero/fotos/hero-desktop-1440x810.webp" srcset="prototipos/teste-hero/fotos/hero-desktop-1440x810.webp 1440w, prototipos/teste-hero/fotos/hero-desktop-1920x1080.webp 1920w" sizes="90vw" width="1440" height="810" alt="Diego, com a mão no quadro de energia, e o sócio da Ideal Elétrica" decoding="async" />
+        </picture>
+        <figcaption class="kz-wh__chip"><i></i><span>Fale direto com o Diego<br><small>pelo WhatsApp</small></span></figcaption>
+      </figure>
+    </section>
+    
+
+    <!-- TESTE KONK: tudo abaixo da hero e so desta pagina de teste, fotos provisorias (assets/teste/ORIGEM.md) -->
+    <div class="kz">
+      <section class="kz-sec kz-trans" aria-label="Serviços">
+        <div class="kz-head kz-head--c">
+          <span class="kz-eyebrow">O que fazemos</span>
+          <h2 class="kz-h kz-big">Quatro áreas,<br>um padrão</h2>
+          <p class="kz-sub">Instalação, manutenção e projetos elétricos para residências e empresas, em toda a Grande SP.</p>
+        </div>
+        <div class="kz-glass">
+          <a href="servicos.html"><b>01</b>Instalação</a>
+          <a href="servicos.html"><b>02</b>Manutenção</a>
+          <a href="servicos.html"><b>03</b>Projetos</a>
+        </div>
+      </section>
+
+      <section class="kz-sec kz-serv" id="servicos" aria-label="Áreas de atuação">
+        <div class="kz-serv__grid">
+          <div class="kz-rows">
+        <a class="kz-row" href="servicos.html#residencial" data-i="0">
+          <span class="kz-row__n">01</span>
+          <span class="kz-row__b"><b class="kz-h kz-row__t">Residencial</b><span class="kz-row__d">Construção nova, reforma, troca de fiação e pontos elétricos com projeto e acabamento cuidadoso.</span></span>
+          <span class="kz-row__ar" aria-hidden="true">→</span>
+          <span class="kz-media kz-row__m"><img src="assets/teste/11-quadro-residencial.webp" srcset="assets/teste/11-quadro-residencial-sm.webp 700w, assets/teste/11-quadro-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span>
+        </a>
+        <a class="kz-row" href="servicos.html#predial" data-i="1">
+          <span class="kz-row__n">02</span>
+          <span class="kz-row__b"><b class="kz-h kz-row__t">Predial</b><span class="kz-row__d">Instalação, manutenção e projetos elétricos para prédios e áreas comuns.</span></span>
+          <span class="kz-row__ar" aria-hidden="true">→</span>
+          <span class="kz-media kz-row__m"><img src="assets/teste/20-quadro-embutido-parede.webp" srcset="assets/teste/20-quadro-embutido-parede-sm.webp 700w, assets/teste/20-quadro-embutido-parede.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span>
+        </a>
+        <a class="kz-row" href="servicos.html#industrial" data-i="2">
+          <span class="kz-row__n">03</span>
+          <span class="kz-row__b"><b class="kz-h kz-row__t">Industrial</b><span class="kz-row__d">Quadros e instalações para galpões e oficinas, dimensionados para a carga de cada uso. [CONFIRMAR]</span></span>
+          <span class="kz-row__ar" aria-hidden="true">→</span>
+          <span class="kz-media kz-row__m"><img src="assets/teste/13-eletrocalha-galpao.webp" srcset="assets/teste/13-eletrocalha-galpao-sm.webp 700w, assets/teste/13-eletrocalha-galpao.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span>
+        </a>
+        <a class="kz-row" href="servicos.html#reforma" data-i="3">
+          <span class="kz-row__n">04</span>
+          <span class="kz-row__b"><b class="kz-h kz-row__t">Reforma</b><span class="kz-row__d">Troca de fiação, atualização e adequação às normas vigentes.</span></span>
+          <span class="kz-row__ar" aria-hidden="true">→</span>
+          <span class="kz-media kz-row__m"><img src="assets/teste/14-sanca-residencial.webp" srcset="assets/teste/14-sanca-residencial-sm.webp 700w, assets/teste/14-sanca-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span>
+        </a>
+          </div>
+          <div class="kz-sticky" aria-hidden="true"><span class="kz-media kz-sticky__i is-on"><img src="assets/teste/11-quadro-residencial.webp" srcset="assets/teste/11-quadro-residencial-sm.webp 700w, assets/teste/11-quadro-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="Quadro residencial aberto, com disjuntores e fiação organizada" /></span><span class="kz-media kz-sticky__i"><img src="assets/teste/20-quadro-embutido-parede.webp" srcset="assets/teste/20-quadro-embutido-parede-sm.webp 700w, assets/teste/20-quadro-embutido-parede.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="Quadro embutido na parede com cabos alinhados" /></span><span class="kz-media kz-sticky__i"><img src="assets/teste/13-eletrocalha-galpao.webp" srcset="assets/teste/13-eletrocalha-galpao-sm.webp 700w, assets/teste/13-eletrocalha-galpao.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="Eletrocalha e eletrodutos aparentes num galpão" /></span><span class="kz-media kz-sticky__i"><img src="assets/teste/14-sanca-residencial.webp" srcset="assets/teste/14-sanca-residencial-sm.webp 700w, assets/teste/14-sanca-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="Sala com sanca contínua e spots depois da reforma" /></span></div>
+        </div>
+      </section>
+
+      <section class="kz-sec" id="trabalhos" aria-label="Trabalhos recentes">
+        <div class="kz-head">
+          <div><span class="kz-eyebrow">Trabalhos selecionados</span><h2 class="kz-h kz-big">Trabalhos<br>recentes</h2></div>
+          <a class="kz-link" href="servicos.html">Todos os trabalhos →</a>
+        </div>
+        <div class="kz-track">
+        <figure class="kz-card"><span class="kz-media kz-card__m"><img src="assets/teste/22-escada-externa-pedra.webp" srcset="assets/teste/22-escada-externa-pedra-sm.webp 700w, assets/teste/22-escada-externa-pedra.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><figcaption><small>01 / 06</small><b class="kz-h">Iluminação de escada externa</b></figcaption></figure>
+        <figure class="kz-card"><span class="kz-media kz-card__m"><img src="assets/teste/21-jantar-cozinha-led.webp" srcset="assets/teste/21-jantar-cozinha-led-sm.webp 700w, assets/teste/21-jantar-cozinha-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><figcaption><small>02 / 06</small><b class="kz-h">Jantar e cozinha com LED</b></figcaption></figure>
+        <figure class="kz-card"><span class="kz-media kz-card__m"><img src="assets/teste/23-spot-parede-pedra.webp" srcset="assets/teste/23-spot-parede-pedra-sm.webp 700w, assets/teste/23-spot-parede-pedra.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><figcaption><small>03 / 06</small><b class="kz-h">Spot rasante em parede</b></figcaption></figure>
+        <figure class="kz-card"><span class="kz-media kz-card__m"><img src="assets/teste/24-banheiro-perfil-led.webp" srcset="assets/teste/24-banheiro-perfil-led-sm.webp 700w, assets/teste/24-banheiro-perfil-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><figcaption><small>04 / 06</small><b class="kz-h">Banheiro com perfil de LED</b></figcaption></figure>
+        <figure class="kz-card"><span class="kz-media kz-card__m"><img src="assets/teste/17-nicho-led.webp" srcset="assets/teste/17-nicho-led-sm.webp 700w, assets/teste/17-nicho-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><figcaption><small>05 / 06</small><b class="kz-h">Nicho com fita de LED</b></figcaption></figure>
+        <figure class="kz-card"><span class="kz-media kz-card__m"><img src="assets/teste/14-sanca-residencial.webp" srcset="assets/teste/14-sanca-residencial-sm.webp 700w, assets/teste/14-sanca-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><figcaption><small>06 / 06</small><b class="kz-h">Sala com sanca e spots</b></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="kz-sec" aria-label="Na obra">
+        <div class="kz-head">
+          <div><span class="kz-eyebrow">Na obra</span><h2 class="kz-h kz-big">O que fica<br>dentro da parede</h2></div>
+          <div class="kz-arrows"><button type="button" class="kz-arr" data-d="-1" aria-label="Anterior">‹</button><button type="button" class="kz-arr" data-d="1" aria-label="Próxima">›</button></div>
+        </div>
+        <div class="kz-track kz-track--v" id="kz-reel"><span class="kz-media kz-reel__i"><img src="assets/teste/18-quadro-disjuntores-din.webp" srcset="assets/teste/18-quadro-disjuntores-din-sm.webp 700w, assets/teste/18-quadro-disjuntores-din.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/19-alicate-amperimetro.webp" srcset="assets/teste/19-alicate-amperimetro-sm.webp 700w, assets/teste/19-alicate-amperimetro.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/20-quadro-embutido-parede.webp" srcset="assets/teste/20-quadro-embutido-parede-sm.webp 700w, assets/teste/20-quadro-embutido-parede.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/11-quadro-residencial.webp" srcset="assets/teste/11-quadro-residencial-sm.webp 700w, assets/teste/11-quadro-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/13-eletrocalha-galpao.webp" srcset="assets/teste/13-eletrocalha-galpao-sm.webp 700w, assets/teste/13-eletrocalha-galpao.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/07-cabos-aninhados.webp" srcset="assets/teste/07-cabos-aninhados-sm.webp 700w, assets/teste/07-cabos-aninhados.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span>
+        </div>
+      </section>
+
+      <section class="kz-sec" aria-label="Instagram">
+        <div class="kz-head">
+          <div><span class="kz-eyebrow">No Instagram</span><h2 class="kz-h kz-big">Últimos<br>trabalhos</h2></div>
+          <span class="kz-link">@[CONFIRMAR] →</span>
+        </div>
+        <div class="kz-ig"><span class="kz-media kz-ig__i"><img src="assets/teste/21-jantar-cozinha-led.webp" srcset="assets/teste/21-jantar-cozinha-led-sm.webp 700w, assets/teste/21-jantar-cozinha-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/18-quadro-disjuntores-din.webp" srcset="assets/teste/18-quadro-disjuntores-din-sm.webp 700w, assets/teste/18-quadro-disjuntores-din.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/22-escada-externa-pedra.webp" srcset="assets/teste/22-escada-externa-pedra-sm.webp 700w, assets/teste/22-escada-externa-pedra.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/07-cabos-aninhados.webp" srcset="assets/teste/07-cabos-aninhados-sm.webp 700w, assets/teste/07-cabos-aninhados.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/24-banheiro-perfil-led.webp" srcset="assets/teste/24-banheiro-perfil-led-sm.webp 700w, assets/teste/24-banheiro-perfil-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/13-eletrocalha-galpao.webp" srcset="assets/teste/13-eletrocalha-galpao-sm.webp 700w, assets/teste/13-eletrocalha-galpao.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/23-spot-parede-pedra.webp" srcset="assets/teste/23-spot-parede-pedra-sm.webp 700w, assets/teste/23-spot-parede-pedra.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/11-quadro-residencial.webp" srcset="assets/teste/11-quadro-residencial-sm.webp 700w, assets/teste/11-quadro-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/17-nicho-led.webp" srcset="assets/teste/17-nicho-led-sm.webp 700w, assets/teste/17-nicho-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/20-quadro-embutido-parede.webp" srcset="assets/teste/20-quadro-embutido-parede-sm.webp 700w, assets/teste/20-quadro-embutido-parede.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/14-sanca-residencial.webp" srcset="assets/teste/14-sanca-residencial-sm.webp 700w, assets/teste/14-sanca-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/19-alicate-amperimetro.webp" srcset="assets/teste/19-alicate-amperimetro-sm.webp 700w, assets/teste/19-alicate-amperimetro.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span></div>
+      </section>
+
+      <section class="kz-sec kz-int" id="atendimento" aria-label="Como falar com a gente">
+        <div class="kz-head kz-head--c"><span class="kz-eyebrow">Fale com o Diego</span><h2 class="kz-h">Escolha o assunto,<br>a mensagem já vai pronta</h2></div>
+        <div class="kz-int__g">
+          <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-int__b"><b>Quero um orçamento</b><span>Conte o que precisa e ele responde</span></a>
+          <a href="#" data-site-href="wa" data-wa-msg="Olá! Preciso de atendimento elétrico urgente." class="kz-int__b"><b>É urgente</b><span>Cheiro de queimado, quadro que desarma, falta de energia <small>[CONFIRMAR se atende urgência e em que horário]</small></span></a>
+          <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica. Vocês atendem na minha região? Meu bairro/cidade é: " class="kz-int__b"><b>Atendem na minha região?</b><span>Itaquaquecetuba e região <small>[CONFIRMAR lista de cidades e bairros]</small></span></a>
+          <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e tenho uma dúvida sobre um serviço." class="kz-int__b"><b>Tenho uma dúvida</b><span>Tire antes de decidir</span></a>
+        </div>
+      </section>
+      <section class="kz-sec kz-faq" id="duvidas" aria-label="Perguntas frequentes">
+        <div class="kz-head kz-head--c"><span class="kz-eyebrow">Perguntas frequentes</span><h2 class="kz-h">O que mais<br>perguntam</h2></div>
+        <div class="kz-faq__l">
+          <details><summary>Vocês cobram pela visita?</summary><p>[CONFIRMAR com o Diego: cobra visita? abate no valor do serviço?]</p></details>
+          <details><summary>Quanto tempo demora para vocês chegarem?</summary><p>[CONFIRMAR com o Diego: prazo médio por cidade]</p></details>
+          <details><summary>Atendem condomínios e empresas?</summary><p>Sim: atendemos residencial, predial e industrial. [CONFIRMAR o que entra em cada um]</p></details>
+          <details><summary>Quais formas de pagamento?</summary><p>[CONFIRMAR com o Diego: Pix, cartão, parcelamento]</p></details>
+          <details><summary>O serviço tem garantia?</summary><p>[CONFIRMAR com o Diego: prazo e o que cobre, por escrito]</p></details>
+          <details><summary>Fazem quadro de distribuição e reforma de instalação antiga?</summary><p>Sim, é parte do que fazemos. [CONFIRMAR o escopo exato]</p></details>
+        </div>
+      </section>
+      <section class="kz-sec kz-cta" id="contato" aria-label="Pedir orçamento">
+        <span class="kz-eyebrow">Gostou do que viu?</span>
+        <h2 class="kz-h kz-huge">Peça um<br>orçamento</h2>
+        <div class="kz-cta__btns">
+          <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-btn">Pedir orçamento <span aria-hidden="true">→</span></a>
+          <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-btn kz-btn--o"><span data-site="whatsappDisplay">WhatsApp</span></a>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
+            <span data-site="name">Ideal Elétrica</span>
+          </a>
+          <p class="lede" data-site="slogan" style="margin-top: var(--space-4);">Projetando • Instalando • Conectando com você</p>
+        </div>
+
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a data-site-href="phone" href="#"><span data-site="phone">[TELEFONE]</span></a></li>
+            <li><a data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica." href="#">WhatsApp: <span data-site="whatsappDisplay">[WHATSAPP]</span></a></li>
+            <li><a data-site-href="email" href="#"><span data-site="email">[EMAIL]</span></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Área de atuação</h3>
+          <p class="text-muted" style="font-size: var(--fs-sm);" data-site="serviceArea">
+            Itaquaquecetuba e toda a Grande São Paulo
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <span>© <span id="year"></span> <span data-site="name">Ideal Elétrica</span>. Todos os direitos reservados.</span>
+          <span><span data-site="ownerName">[NOME DO RESPONSÁVEL]</span> · Pessoa física · <span data-site="address">[ENDERECO]</span></span>
+        </div>
+        <nav class="footer-legal-nav" aria-label="Informações legais">
+          <a href="privacidade.html">Privacidade</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="termos.html">Termos de uso</a>
+          <button type="button" class="footer-consent" data-cmp-open>Preferências de cookies</button>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e tenho uma dúvida." class="wa-float" aria-label="Chamar no WhatsApp">
+    <svg viewBox="0 0 720 720" fill="currentColor" aria-hidden="true"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>
+  </a>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/consent.js"></script>
+  <script src="assets/js/measure.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/intro.js" defer></script>
+  <script src="assets/js/scroll-cinema.js" defer></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<div class="kz-voto" role="group" aria-label="Chaves do teste" data-aberto="1">
+<p class="kz-aviso">Prévia para avaliação. As fotos de trabalhos são ilustrativas, de outros profissionais, e os textos com [CONFIRMAR] ainda dependem do Diego.</p>
+<button class="kz-voto__t" type="button" id="kv-t">Votar ▾</button>
+<div class="kz-voto__c">
+<div data-k="hd"><span>Cabeçalho</span><button data-v="0">Só logo</button><button data-v="1">Região + orçamento</button><button data-v="2">Pílula</button><button data-v="3">Âncoras</button></div>
+<div data-k="hv"><span>Hero</span><button data-v="0">Foto cheia</button><button data-v="1">Iluminada</button></div>
+<div data-k="hh"><span>Título</span><button data-v="0">Causa</button><button data-v="1">Data center</button><button data-v="2">Sem susto</button><button data-v="3">Atrás da parede</button><button data-v="4">Sem enrolação</button><button data-v="5">Explica</button></div>
+<div data-k="ht"><span>Texto antigo</span><button data-v="0">Frase 1</button><button data-v="1">Frase 2</button><button data-v="2">Logo</button></div>
+<div data-k="bg"><span>Fundo do site</span><button data-v="quente">Grafite</button><button data-v="claro">Claro</button></div>
+<div data-k="cn"><span>Cantos</span><button data-v="chanfro">Chanfro</button><button data-v="redondo">Redondo</button></div>
+<div data-k="al"><span>Títulos</span><button data-v="canto">Canto</button><button data-v="centro">Centro</button></div>
+<div data-k="cd"><span>Cartões</span><button data-v="sim">Com</button><button data-v="nao">Sem</button></div>
+<div class="kz-voto__v"><span>Voto em</span><select id="kv-g"><option value="heroiluminada">Hero iluminada (estilo Worth)</option><option value="texto">Texto da hero</option><option value="fundo">Fundo e transição</option><option value="cantos">Cantos</option><option value="titulos">Títulos</option><option value="cartoes">Cartões</option><option value="secserv">Lista de áreas</option><option value="secrec">Trabalhos recentes</option><option value="secreel">Dentro da parede</option><option value="secig">Instagram</option><option value="seccta">Chamada final</option><option value="cabecalho">Cabeçalho</option></select>
+<button data-r="pega">Me pega</button><button data-r="talvez">Talvez</button><button data-r="descarta">Descartar</button>
+<input id="kv-n" placeholder="Comentário (salva sozinho)"><em id="kv-ok"></em></div>
+</div></div>
+<script>
+/* TESTE KONK: frases adaptadas do site de referencia; Frase 2 e o sub da hero tem [CONFIRMAR com o Diego]; nada disto e texto final */
+(function(){
+var F=["O trabalho que você não vê importa tanto quanto o que você vê.","Quem faz o seu orçamento é quem põe a mão no quadro."];
+var HH=[["A gente acha a causa,","não só religa."],["Padrão de data center,","em casa e na obra."],["Quadro certo,","sem susto."],["O que fica atrás da parede,","feito para durar."],["Do diagnóstico ao quadro,","sem enrolação."],["Eletricista que explica","antes de mexer."]],wh=document.getElementById("kz-wh-h");
+var h=document.getElementById("kz-h1"),P=new URLSearchParams(location.search),st={hh:"0",hv:"1",hd:"0",ht:"0",bg:"quente",cn:"chanfro",al:"canto",cd:"sim"};
+for(var k in st)if(P.get(k)!==null)st[k]=P.get(k);
+function ap(){for(var k in st)document.body.dataset[k]=st[k];var t=HH[+st.hh]||HH[0];wh.innerHTML="<span>"+t[0]+"</span> <em>"+t[1]+"</em>";
+
+document.querySelectorAll(".kz-voto__c > div[data-k]").forEach(function(d){d.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x.dataset.v===st[d.dataset.k])})})}
+document.querySelectorAll(".kz-voto__c > div[data-k]").forEach(function(d){d.querySelectorAll("button").forEach(function(x){x.onclick=function(){st[d.dataset.k]=x.dataset.v;ap()}})});
+ap();
+/* voto dentro do site: me pega / talvez / descartar + comentario, salvo no navegador e em material/votos-konk.json */
+var V={},LS="kz-votos-v1",g=document.getElementById("kv-g"),n=document.getElementById("kv-n"),ok=document.getElementById("kv-ok"),box=document.querySelector(".kz-voto"),tm;
+try{V=JSON.parse(localStorage.getItem(LS)||"{}")}catch(e){}
+function sh(){var v=V[g.value]||{};n.value=v.nota||"";box.querySelectorAll("[data-r]").forEach(function(x){x.setAttribute("aria-pressed",v.voto===x.dataset.r)})}
+function sv(){try{localStorage.setItem(LS,JSON.stringify(V))}catch(e){}
+fetch("/voto",{method:"POST",body:JSON.stringify({chaves:st,votos:V,quando:new Date().toISOString()})}).then(function(){ok.textContent="salvo"}).catch(function(){ok.textContent="só local"});clearTimeout(tm);tm=setTimeout(function(){ok.textContent=""},1500)}
+g.onchange=sh;
+box.querySelectorAll("[data-r]").forEach(function(x){x.onclick=function(){var v=V[g.value]=V[g.value]||{};v.voto=x.dataset.r;v.chaves=JSON.parse(JSON.stringify(st));sh();sv()}});
+n.oninput=function(){var v=V[g.value]=V[g.value]||{};v.nota=n.value;v.chaves=JSON.parse(JSON.stringify(st));sv()};
+document.getElementById("kv-t").onclick=function(){var a=box.dataset.aberto==="1";box.dataset.aberto=a?"0":"1";this.textContent=a?"Votar ▴":"Votar ▾"};
+sh();
+/* lista de servicos: a foto da direita troca com a linha em foco */
+var rows=document.querySelectorAll(".kz-row"),imgs=document.querySelectorAll(".kz-sticky__i");
+function on(i){imgs.forEach(function(m,j){m.classList.toggle("is-on",j===i)})}
+rows.forEach(function(r,i){r.addEventListener("mouseenter",function(){on(i)});r.addEventListener("focus",function(){on(i)})});
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)on(+e.target.dataset.i)})},{rootMargin:"-45% 0px -45% 0px"});rows.forEach(function(r){io.observe(r)})}
+/* setas da faixa vertical */
+var rl=document.getElementById("kz-reel");
+document.querySelectorAll(".kz-arr").forEach(function(b){b.onclick=function(){rl.scrollBy({left:(+b.dataset.d)*rl.clientWidth*.6,behavior:"smooth"})}});
+})();
+</script>
+</body>
+</html>
