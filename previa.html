@@ -283,9 +283,18 @@ body[data-cd=nao] .kz-glass{display:none}
 .kz-voto button[aria-pressed=true]{background:#ffcc00;color:#0d0f12}
 .kz-voto__t,.kz-voto__v,.kz-voto__c>div[data-k]:not([data-k=bg]){display:none!important}.kz-voto span{opacity:.9}
 .kz-aviso{flex-basis:100%;margin:0;text-align:center;font:500 .68rem/1.35 Archivo,sans-serif;opacity:.85}
+
+/* refino (relatorio Fable): FAQ clicavel inteiro, hover/foco, piso de 12px */
+.kz-faq details{padding:0}.kz-faq summary{padding:1rem 1.25rem}.kz-faq summary::-webkit-details-marker{display:none}.kz-faq p{padding:0 1.25rem 1rem;margin:0}
+.kz-wh__cta,.kz-wh__chip,.kz-hr__wa,.kz-int__b,.kz-faq details,.kz-btn,.kz-arr{transition:background-color .2s ease,border-color .2s ease,transform .2s ease,color .2s ease}
+.kz-wh__cta:hover{transform:translateY(-1px);background:#fff}body[data-bg=claro] .kz-wh__cta:hover{background:#2a2e34}
+.kz-hr__wa:hover,.kz-btn:hover{background:#ecbd02}.kz-int__b:hover{transform:translateY(-2px)}
+.kz-arr:focus-visible,.kz-wh__cta:focus-visible,.kz-wh__chip:focus-visible,.kz-int__b:focus-visible,.kz-faq summary:focus-visible,.kz-hr__wa:focus-visible{outline:2px solid #ffcc00;outline-offset:3px}
+.kz-wh__pill{font-size:.75rem}.kz-wh__chip small{font-size:.75rem}.kz-eyebrow{font-size:max(.75rem,1em)}
+@media(prefers-reduced-motion:reduce){.kz-wh__cta,.kz-wh__chip,.kz-int__b{transition:none}.kz-wh__cta:hover,.kz-int__b:hover{transform:none}}
 </style>
 </head>
-<body>
+<body data-hh="0" data-hv="1" data-hd="0" data-ht="0" data-bg="quente" data-cn="chanfro" data-al="canto" data-cd="nao">
   <div id="scroll-sentinel" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;"></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
   <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
@@ -342,7 +351,7 @@ body[data-cd=nao] .kz-glass{display:none}
         <picture>
           <img src="prototipos/teste-hero/fotos/hero-desktop-1440x810.webp" srcset="prototipos/teste-hero/fotos/hero-desktop-1440x810.webp 1440w, prototipos/teste-hero/fotos/hero-desktop-1920x1080.webp 1920w" sizes="90vw" width="1440" height="810" alt="Diego, com a mão no quadro de energia, e o sócio da Ideal Elétrica" decoding="async" />
         </picture>
-        <figcaption class="kz-wh__chip"><i></i><span>Fale direto com o Diego<br><small>pelo WhatsApp</small></span></figcaption>
+        <a class="kz-wh__chip" href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero falar direto com o Diego."><i></i><span>Fale direto com o Diego<br><small>pelo WhatsApp</small></span></a>
       </figure>
     </section>
     
@@ -352,7 +361,7 @@ body[data-cd=nao] .kz-glass{display:none}
       <section class="kz-sec kz-trans" aria-label="Serviços">
         <div class="kz-head kz-head--c">
           <span class="kz-eyebrow">O que fazemos</span>
-          <h2 class="kz-h kz-big">Quatro áreas,<br>um padrão</h2>
+          <h2 class="kz-h kz-big">Quatro áreas, <br>um padrão</h2>
           <p class="kz-sub">Instalação, manutenção e projetos elétricos para residências e empresas, em toda a Grande SP.</p>
         </div>
         <div class="kz-glass">
@@ -396,7 +405,7 @@ body[data-cd=nao] .kz-glass{display:none}
 
       <section class="kz-sec" id="trabalhos" aria-label="Trabalhos recentes">
         <div class="kz-head">
-          <div><span class="kz-eyebrow">Trabalhos selecionados</span><h2 class="kz-h kz-big">Trabalhos<br>recentes</h2></div>
+          <div><span class="kz-eyebrow">O que já fizemos</span><h2 class="kz-h kz-big">Trabalhos <br>recentes</h2></div>
           <a class="kz-link" href="servicos.html">Todos os trabalhos →</a>
         </div>
         <div class="kz-track">
@@ -411,7 +420,7 @@ body[data-cd=nao] .kz-glass{display:none}
 
       <section class="kz-sec" aria-label="Na obra">
         <div class="kz-head">
-          <div><span class="kz-eyebrow">Na obra</span><h2 class="kz-h kz-big">O que fica<br>dentro da parede</h2></div>
+          <div><span class="kz-eyebrow">Na obra</span><h2 class="kz-h kz-big">O que fica <br>dentro da parede</h2></div>
           <div class="kz-arrows"><button type="button" class="kz-arr" data-d="-1" aria-label="Anterior">‹</button><button type="button" class="kz-arr" data-d="1" aria-label="Próxima">›</button></div>
         </div>
         <div class="kz-track kz-track--v" id="kz-reel"><span class="kz-media kz-reel__i"><img src="assets/teste/18-quadro-disjuntores-din.webp" srcset="assets/teste/18-quadro-disjuntores-din-sm.webp 700w, assets/teste/18-quadro-disjuntores-din.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/19-alicate-amperimetro.webp" srcset="assets/teste/19-alicate-amperimetro-sm.webp 700w, assets/teste/19-alicate-amperimetro.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/20-quadro-embutido-parede.webp" srcset="assets/teste/20-quadro-embutido-parede-sm.webp 700w, assets/teste/20-quadro-embutido-parede.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/11-quadro-residencial.webp" srcset="assets/teste/11-quadro-residencial-sm.webp 700w, assets/teste/11-quadro-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/13-eletrocalha-galpao.webp" srcset="assets/teste/13-eletrocalha-galpao-sm.webp 700w, assets/teste/13-eletrocalha-galpao.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-reel__i"><img src="assets/teste/07-cabos-aninhados.webp" srcset="assets/teste/07-cabos-aninhados-sm.webp 700w, assets/teste/07-cabos-aninhados.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span>
@@ -420,23 +429,23 @@ body[data-cd=nao] .kz-glass{display:none}
 
       <section class="kz-sec" aria-label="Instagram">
         <div class="kz-head">
-          <div><span class="kz-eyebrow">No Instagram</span><h2 class="kz-h kz-big">Últimos<br>trabalhos</h2></div>
+          <div><span class="kz-eyebrow">No Instagram</span><h2 class="kz-h kz-big">Últimos <br>trabalhos</h2></div>
           <span class="kz-link">@[CONFIRMAR] →</span>
         </div>
         <div class="kz-ig"><span class="kz-media kz-ig__i"><img src="assets/teste/21-jantar-cozinha-led.webp" srcset="assets/teste/21-jantar-cozinha-led-sm.webp 700w, assets/teste/21-jantar-cozinha-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/18-quadro-disjuntores-din.webp" srcset="assets/teste/18-quadro-disjuntores-din-sm.webp 700w, assets/teste/18-quadro-disjuntores-din.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/22-escada-externa-pedra.webp" srcset="assets/teste/22-escada-externa-pedra-sm.webp 700w, assets/teste/22-escada-externa-pedra.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/07-cabos-aninhados.webp" srcset="assets/teste/07-cabos-aninhados-sm.webp 700w, assets/teste/07-cabos-aninhados.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/24-banheiro-perfil-led.webp" srcset="assets/teste/24-banheiro-perfil-led-sm.webp 700w, assets/teste/24-banheiro-perfil-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/13-eletrocalha-galpao.webp" srcset="assets/teste/13-eletrocalha-galpao-sm.webp 700w, assets/teste/13-eletrocalha-galpao.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/23-spot-parede-pedra.webp" srcset="assets/teste/23-spot-parede-pedra-sm.webp 700w, assets/teste/23-spot-parede-pedra.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/11-quadro-residencial.webp" srcset="assets/teste/11-quadro-residencial-sm.webp 700w, assets/teste/11-quadro-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/17-nicho-led.webp" srcset="assets/teste/17-nicho-led-sm.webp 700w, assets/teste/17-nicho-led.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/20-quadro-embutido-parede.webp" srcset="assets/teste/20-quadro-embutido-parede-sm.webp 700w, assets/teste/20-quadro-embutido-parede.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/14-sanca-residencial.webp" srcset="assets/teste/14-sanca-residencial-sm.webp 700w, assets/teste/14-sanca-residencial.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span><span class="kz-media kz-ig__i"><img src="assets/teste/19-alicate-amperimetro.webp" srcset="assets/teste/19-alicate-amperimetro-sm.webp 700w, assets/teste/19-alicate-amperimetro.webp 1050w" sizes="(min-width:1000px) 40vw, 90vw" loading="lazy" decoding="async" alt="" /></span></div>
       </section>
 
       <section class="kz-sec kz-int" id="atendimento" aria-label="Como falar com a gente">
-        <div class="kz-head kz-head--c"><span class="kz-eyebrow">Fale com o Diego</span><h2 class="kz-h">Escolha o assunto,<br>a mensagem já vai pronta</h2></div>
+        <div class="kz-head kz-head--c"><span class="kz-eyebrow">Fale com o Diego</span><h2 class="kz-h">Escolha o assunto, <br>a mensagem já vai pronta</h2></div>
         <div class="kz-int__g">
           <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-int__b"><b>Quero um orçamento</b><span>Conte o que precisa e ele responde</span></a>
           <a href="#" data-site-href="wa" data-wa-msg="Olá! Preciso de atendimento elétrico urgente." class="kz-int__b"><b>É urgente</b><span>Cheiro de queimado, quadro que desarma, falta de energia <small>[CONFIRMAR se atende urgência e em que horário]</small></span></a>
           <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica. Vocês atendem na minha região? Meu bairro/cidade é: " class="kz-int__b"><b>Atendem na minha região?</b><span>Itaquaquecetuba e região <small>[CONFIRMAR lista de cidades e bairros]</small></span></a>
-          <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e tenho uma dúvida sobre um serviço." class="kz-int__b"><b>Tenho uma dúvida</b><span>Tire antes de decidir</span></a>
+          <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e tenho uma dúvida sobre um serviço." class="kz-int__b"><b>Tenho uma dúvida</b><span>Tire a dúvida antes de fechar</span></a>
         </div>
       </section>
       <section class="kz-sec kz-faq" id="duvidas" aria-label="Perguntas frequentes">
-        <div class="kz-head kz-head--c"><span class="kz-eyebrow">Perguntas frequentes</span><h2 class="kz-h">O que mais<br>perguntam</h2></div>
+        <div class="kz-head kz-head--c"><span class="kz-eyebrow">Perguntas frequentes</span><h2 class="kz-h">O que mais <br>perguntam</h2></div>
         <div class="kz-faq__l">
           <details><summary>Vocês cobram pela visita?</summary><p>[CONFIRMAR com o Diego: cobra visita? abate no valor do serviço?]</p></details>
           <details><summary>Quanto tempo demora para vocês chegarem?</summary><p>[CONFIRMAR com o Diego: prazo médio por cidade]</p></details>
@@ -447,8 +456,8 @@ body[data-cd=nao] .kz-glass{display:none}
         </div>
       </section>
       <section class="kz-sec kz-cta" id="contato" aria-label="Pedir orçamento">
-        <span class="kz-eyebrow">Gostou do que viu?</span>
-        <h2 class="kz-h kz-huge">Peça um<br>orçamento</h2>
+        <span class="kz-eyebrow">Orçamento sem compromisso</span>
+        <h2 class="kz-h kz-huge">Peça um <br>orçamento</h2>
         <div class="kz-cta__btns">
           <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-btn">Pedir orçamento <span aria-hidden="true">→</span></a>
           <a href="#" data-site-href="wa" data-wa-msg="Olá! Vim pelo site da Ideal Elétrica e quero um orçamento." class="kz-btn kz-btn--o"><span data-site="whatsappDisplay">WhatsApp</span></a>
@@ -545,7 +554,7 @@ body[data-cd=nao] .kz-glass{display:none}
 (function(){
 var F=["O trabalho que você não vê importa tanto quanto o que você vê.","Quem faz o seu orçamento é quem põe a mão no quadro."];
 var HH=[["A gente acha a causa,","não só religa."],["Padrão de data center,","em casa e na obra."],["Quadro certo,","sem susto."],["O que fica atrás da parede,","feito para durar."],["Do diagnóstico ao quadro,","sem enrolação."],["Eletricista que explica","antes de mexer."]],wh=document.getElementById("kz-wh-h");
-var h=document.getElementById("kz-h1"),P=new URLSearchParams(location.search),st={hh:"0",hv:"1",hd:"0",ht:"0",bg:"quente",cn:"chanfro",al:"canto",cd:"sim"};
+var h=document.getElementById("kz-h1"),P=new URLSearchParams(location.search),st={hh:"0",hv:"1",hd:"0",ht:"0",bg:"quente",cn:"chanfro",al:"canto",cd:"nao"};
 for(var k in st)if(P.get(k)!==null)st[k]=P.get(k);
 function ap(){for(var k in st)document.body.dataset[k]=st[k];var t=HH[+st.hh]||HH[0];wh.innerHTML="<span>"+t[0]+"</span> <em>"+t[1]+"</em>";
 
