@@ -10,6 +10,7 @@ window.SITE_CONFIG = {
   slogan: "Projetando • Instalando • Conectando com você",
   phone: "(11) 97767-0633",
   whatsapp: "5511977670633",
+  phone2: "(11) 95927-8456", /* segundo contato (sócio); nome ainda não informado */
   whatsappDisplay: "(11) 97767-0633",
   whatsappLink: "https://wa.me/5511977670633?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento",
   email: "[EMAIL]",

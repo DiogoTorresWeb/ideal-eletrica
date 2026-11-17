@@ -51,7 +51,7 @@
         return;
       }
 
-      if (kind === "phone") el.setAttribute("href", "tel:" + value.replace(/\D/g, ""));
+      if (kind === "phone" || kind === "phone2") el.setAttribute("href", "tel:" + value.replace(/\D/g, ""));
       if (kind === "email") el.setAttribute("href", "mailto:" + value);
     });
 
